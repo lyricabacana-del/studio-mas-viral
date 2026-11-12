@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0908" id="metaTheme">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Studio +Viral: Agencia de marketing de influencers, modelos y bailarinas. Elevamos el prestigio y alcance de marcas con contenido magnético y distribución global.">
+<title>Studio +Viral | Agencia de Influencers, Modelos & Bailarinas</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0908'/%3E%3Cpath d='M20 32h24M32 20v24' stroke='%23d4af37' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio +Viral">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Studio +Viral | Marketing con Modelos, Bailarinas e Influencers">
+<meta property="og:description" content="Damos prestigio y distribución masiva a tu marca con un elenco selecto de modelos, bailarinas y creadoras virales.">
+
+<script>
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("sv-theme"); } catch (e) {}
+  if (t !== "light" && t !== "dark") {
+    t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+  document.documentElement.setAttribute("data-theme", t);
+  var m = document.getElementById("metaTheme");
+  if (m) m.setAttribute("content", t === "light" ? "#ffffff" : "#0a0908");
+})();
+</script>
+
+<style>
+/* =========================================
+   1. VARIABLES Y TEMAS
+   ========================================= */
+:root {
+  --bg: #0a0908;
+  --panel: #12100d;
+  --panel2: #1a1712;
+  --field: #070605;
+  --ink: #f4efe6;
+  --gray: #a79f90;
+  --border: #2a2519;
+  --gold: #d4af37;
+  --gold-l: #ecd27a;
+  --gold-d: #a8861f;
+  --on-gold: #14110b;
+  --bar: #000;
+  --shadow: 0 24px 60px #000c;
+  --r: 18px;
+  --serif: "Playfair Display", "Didot", "Bodoni MT", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --spotify: "Montserrat", -apple-system, system-ui, sans-serif;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --panel: #faf7f0;
+  --panel2: #f3eee1;
+  --field: #ffffff;
+  --ink: #1a1610;
+  --gray: #6f6657;
+  --border: #e6dfcf;
+  --gold: #b8902a;
+  --gold-l: #d4af37;
+  --gold-d: #8f6e17;
+  --on-gold: #14110b;
+  --bar: #000;
+  --shadow: 0 24px 60px #3a2f1433;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  transition: background .3s, color .3s;
+}
+
+img, svg { max-width: 100%; }
+h1, h2, h3, p { overflow-wrap: break-word; }
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; border-radius: 0; }
+button { cursor: pointer; background: none; border: 0; }
+.container { width: min(1140px, 100% - 40px); margin-inline: auto; }
+section { padding: 64px 0; }
+em { font-style: italic; }
+
+.gold { color: var(--gold); }
+.tag { display: inline-block; color: var(--gold); font-size: 11px; letter-spacing: .24em; font-weight: 700; text-transform: uppercase; }
+
+/* Tipografía pequeña estilo Spotify (+Viral) */
+.spotify-tag {
+  font-family: var(--spotify);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  font-size: 0.88em;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.spotify-badge {
+  display: inline-block;
+  font-family: var(--spotify);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #121212;
+  color: #1ed760;
+  border: 1px solid #1ed76044;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   2. COMPONENTES Y TARJETAS CON FONDOS
+   ========================================= */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  transition: background .3s, border-color .3s, transform .25s, box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tarjetas con fotos fotográficas de referencia de fondo */
+.card-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+.card-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 9, 8, 0.76) 0%, rgba(10, 9, 8, 0.95) 100%);
+  z-index: 1;
+  transition: opacity .35s ease, background .35s ease;
+}
+:root[data-theme="light"] .card-img::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(246, 241, 232, 0.96) 100%);
+}
+@media(hover: hover) {
+  .card-img:hover::before {
+    opacity: 0.85;
+  }
+  .card-img:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+  }
+}
+.card-img > * {
+  position: relative;
+  z-index: 2;
+}
+
+.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.icon-circle {
+  width: 52px; height: 52px; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid var(--gold-d); border-radius: 50%; background: rgba(26, 23, 18, 0.85); color: var(--gold);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+:root[data-theme="light"] .icon-circle {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.section-head { margin-bottom: 30px; max-width: 680px; }
+.section-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 7vw, 44px); line-height: 1.08; letter-spacing: -.01em; margin: 10px 0 12px; }
+.section-head p { color: var(--gray); font-size: 15.5px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 24px; border-radius: 999px;
+  border: 1px solid var(--gold-d); background: rgba(18, 16, 13, 0.7); color: var(--ink);
+  font-weight: 700; font-size: 14px; letter-spacing: .02em; text-align: center;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  transition: transform .2s, border-color .2s, background .2s, box-shadow .3s;
+}
+.btn .ico { width: 18px; height: 18px; }
+.btn:active { transform: scale(.97); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d));
+  border-color: var(--gold); color: var(--on-gold);
+  box-shadow: 0 8px 28px #d4af3730;
+}
+@media(hover: hover) {
+  .btn:hover { border-color: var(--gold); }
+  .btn-gold:hover { box-shadow: 0 10px 34px #d4af3755; }
+}
+
+/* =========================================
+   3. HEADER
+   ========================================= */
+header {
+  position: sticky; top: 0; z-index: 100; height: 64px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+
+.logo {
+  display: inline-flex; align-items: baseline; gap: .35em; white-space: nowrap;
+  font-size: 20px; line-height: 1;
+}
+.logo .l1 { font-family: var(--serif); font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); }
+.logo .l2 {
+  font-family: var(--spotify);
+  font-weight: 900;
+  font-size: 0.75em;
+  letter-spacing: -0.03em;
+  color: var(--gold);
+  text-transform: uppercase;
+  background: #1e1b12;
+  padding: 3px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--gold-d);
+}
+
+.nav-links { display: flex; align-items: center; gap: 22px; font-size: 13px; color: var(--gray); margin-left: auto; }
+.nav-links a:not(.btn):hover { color: var(--gold); }
+.nav-links .btn { min-height: 40px; padding: 0 16px; font-size: 13px; }
+.nav-links .btn-gold { color: var(--on-gold); }
+
+.actions { display: flex; align-items: center; gap: 8px; }
+.icon-btn {
+  width: 44px; height: 44px; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid var(--border); border-radius: 50%; background: var(--panel); color: var(--gold);
+}
+.icon-btn .ico { width: 20px; height: 20px; }
+#themeBtn .i-moon { display: none; }
+:root[data-theme="light"] #themeBtn .i-sun { display: none; }
+:root[data-theme="light"] #themeBtn .i-moon { display: block; }
+
+.menu-btn { display: none; }
+.menu-btn .bars { width: 18px; height: 12px; position: relative; }
+.menu-btn .bars i { position: absolute; left: 0; width: 100%; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
+.menu-btn .bars i:nth-child(1) { top: 0; }
+.menu-btn .bars i:nth-child(2) { top: 5px; }
+.menu-btn .bars i:nth-child(3) { top: 10px; }
+.menu-btn.open .bars i:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.menu-btn.open .bars i:nth-child(2) { opacity: 0; }
+.menu-btn.open .bars i:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+/* =========================================
+   4. HERO PRINCIPAL
+   ========================================= */
+.hero { padding: 48px 0 60px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; width: 560px; height: 560px; right: -180px; top: -140px; border-radius: 50%;
+  background: radial-gradient(circle, #d4af372b, transparent 65%); pointer-events: none;
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; position: relative; }
+.hero-grid > * { min-width: 0; }
+
+.hero-label {
+  display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
+  border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; margin-bottom: 20px;
+  font-size: 11px; letter-spacing: .14em; color: var(--gray); background: var(--panel); text-transform: uppercase; font-weight: 600;
+}
+.hero-label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); flex-shrink: 0; }
+
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 8.5vw, 60px); line-height: 1.05; letter-spacing: -.02em; }
+.hero h1 em { color: var(--gold); }
+.hero-description { color: var(--gray); font-size: 16.5px; max-width: 520px; margin: 20px 0 26px; line-height: 1.65; }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-trust {
+  display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 28px;
+  overflow-x: auto; overflow-y: hidden; padding: 2px 2px 6px;
+  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
+}
+.hero-trust::-webkit-scrollbar { display: none; }
+.trust-item {
+  display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 13px; flex: 0 0 auto;
+  font-size: 11.5px; color: var(--gray); border: 1px solid var(--border); border-radius: 999px; background: var(--panel);
+  white-space: nowrap; scroll-snap-align: start;
+}
+.trust-item .ico { width: 14px; height: 14px; color: var(--gold); }
+
+/* Marco de cine */
+.cine {
+  position: relative; width: 100%; max-width: 420px; margin-inline: auto;
+  aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--gold-d); box-shadow: var(--shadow);
+  background: radial-gradient(circle at 30% 20%, #d4af3744, transparent 55%), linear-gradient(160deg, #2a2112, #0a0908 70%);
+}
+.cine img.cine-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+  animation: kenburns 16s ease-in-out infinite alternate;
+}
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
+.cine::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, #00000030 0%, #000000bf 100%); pointer-events: none; }
+.cine::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .14; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(4) infinite;
+}
+@keyframes grain { 0% { transform: translate(0,0); } 25% { transform: translate(-3%,2%); } 50% { transform: translate(2%,-3%); } 75% { transform: translate(-2%,-1%); } 100% { transform: translate(3%,3%); } }
+
+.cine-bar {
+  position: absolute; left: 0; right: 0; height: 11%; z-index: 4; background: var(--bar);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 16px;
+  font-size: 9px; letter-spacing: .24em; color: #cfc6b2; font-weight: 700; text-transform: uppercase;
+}
+.cine-bar.t { top: 0; }
+.cine-bar.b { bottom: 0; }
+.rec { display: inline-flex; align-items: center; gap: 6px; }
+.rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #ff2a2a; animation: blink 1.4s infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+
+.cine-caption {
+  position: absolute; left: 18px; right: 18px; bottom: calc(11% + 18px); z-index: 3;
+}
+.cine-caption small { display: block; font-size: 10px; letter-spacing: .22em; color: var(--gold-l); font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
+.cine-caption strong { display: block; font-family: var(--serif); font-size: 23px; line-height: 1.15; font-weight: 600; color: #f4efe6; }
+
+/* =========================================
+   5. CINTA ANIMADA
+   ========================================= */
+.marquee { overflow: hidden; border-block: 1px solid var(--border); padding: 16px 0; background: var(--panel); }
+.marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; will-change: transform; }
+.marquee-track div { display: flex; gap: 26px; padding-right: 26px; font-size: 12px; font-weight: 700; letter-spacing: .24em; white-space: nowrap; color: var(--gray); text-transform: uppercase; }
+.marquee-track b { color: var(--gold); }
+.marquee-track .sp-badge { font-family: var(--spotify); font-weight: 900; font-size: 0.85em; color: var(--gold); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* =========================================
+   6. DOS CAMINOS
+   ========================================= */
+.paths-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.path { padding: 34px 28px; display: flex; flex-direction: column; gap: 14px; position: relative; min-height: 380px; }
+.path.featured { border-color: var(--gold-d); }
+.path h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1.1; }
+.path p { color: #d6cfc3; font-size: 14.5px; }
+:root[data-theme="light"] .path p { color: #3a3225; }
+.path ul { list-style: none; display: grid; gap: 12px; flex: 1; margin: 8px 0 14px; }
+.path li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink); font-weight: 500; }
+.path li .ico { width: 18px; height: 18px; color: var(--gold); margin-top: 3px; }
+.path .btn { width: 100%; }
+
+/* =========================================
+   7. SERVICIOS (CON FONDOS EN CADA TARJETA)
+   ========================================= */
+.services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.service {
+  padding: 28px 22px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.service .icon-circle { margin-bottom: auto; margin-bottom: 20px; }
+.service h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+:root[data-theme="light"] .service h3 { color: #1a1610; }
+.service p { font-size: 13.8px; color: #d1c8b8; line-height: 1.5; }
+:root[data-theme="light"] .service p { color: #4f4637; font-weight: 500; }
+
+/* =========================================
+   8. LOOKBOOK (scroll horizontal)
+   ========================================= */
+.lookbook {
+  display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; padding: 4px 2px 14px;
+  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.lookbook::-webkit-scrollbar { display: none; }
+.look {
+  position: relative; flex: 0 0 auto; width: 220px; aspect-ratio: 9 / 14; border-radius: 16px; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--border); scroll-snap-align: start; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px;
+  background: linear-gradient(160deg, #2a2112, #0a0908 75%);
+}
+.look img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .6s; }
+.look::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 100%); pointer-events: none; }
+.look > :not(img) { position: relative; z-index: 2; }
+.look small { font-size: 10px; letter-spacing: .2em; color: var(--gold-l); font-weight: 700; text-transform: uppercase; }
+.look strong { font-family: var(--serif); font-size: 19px; font-weight: 600; color: #f4efe6; line-height: 1.15; }
+@media(hover: hover) { .look:hover img { transform: scale(1.08); } }
+.look-note { font-size: 11.5px; color: var(--gray); margin-top: 10px; }
+
+/* =========================================
+   9. PROCESO
+   ========================================= */
+.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.process { padding: 24px 20px; }
+.process-number { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.process .icon-circle { margin: 16px 0 14px; }
+.process h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.process p { font-size: 13.5px; color: var(--gray); }
+
+/* =========================================
+   10. FAQ
+   ========================================= */
+.faq-layout { display: grid; grid-template-columns: 280px 1fr; gap: 34px; }
+.faq-layout > * { min-width: 0; }
+.faq-title h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 7vw, 38px); line-height: 1.08; margin: 12px 0; }
+.faq-title p { color: var(--gray); }
+.faq-list { display: grid; gap: 10px; align-content: start; }
+.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: var(--panel); padding: 0 18px; transition: border-color .2s; }
+.faq-list details[open] { border-color: var(--gold-d); }
+.faq-list summary { list-style: none; cursor: pointer; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 15px; font-weight: 600; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: ""; width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--gold-d);
+  background: linear-gradient(var(--gold), var(--gold)) center/10px 1.6px no-repeat, linear-gradient(var(--gold), var(--gold)) center/1.6px 10px no-repeat;
+  transition: transform .25s;
+}
+.faq-list details[open] summary::after { transform: rotate(45deg); }
+.faq-list details p { font-size: 14px; color: var(--gray); padding: 0 0 18px; max-width: 640px; }
+
+/* =========================================
+   11. CONTACTO
+   ========================================= */
+.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 36px; align-items: start; }
+.contact-layout > * { min-width: 0; }
+.contact-title { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 8.5vw, 54px); line-height: 1.04; letter-spacing: -.02em; margin: 14px 0; }
+.contact-description { color: var(--gray); max-width: 440px; font-size: 16px; line-height: 1.6; }
+
+.form-card { padding: 22px; }
+.tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border: 1px solid var(--border); border-radius: 999px; background: var(--field); margin-bottom: 20px; }
+.tab { min-height: 46px; border-radius: 999px; font-weight: 700; font-size: 13px; color: var(--gray); letter-spacing: .02em; padding: 0 8px; transition: background .25s, color .25s; }
+.tab[aria-selected="true"] { background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d)); color: var(--on-gold); }
+
+.contact-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-content: start; }
+.contact-form[hidden] { display: none; }
+.field { position: relative; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+
+.contact-form input:not([type="checkbox"]), .contact-form select, .contact-form textarea {
+  width: 100%; background: var(--field); color: var(--ink); border: 1px solid var(--border); border-radius: 14px;
+  padding: 0 16px; min-height: 52px; font-size: 15.5px; outline: none; transition: border-color .2s, box-shadow .2s;
+}
+.contact-form textarea { padding: 14px 16px; min-height: 110px; resize: vertical; }
+.contact-form ::placeholder { color: var(--gray); opacity: .8; }
+.contact-form input:not([type="checkbox"]):focus, .contact-form select:focus, .contact-form textarea:focus {
+  border-color: var(--gold); box-shadow: 0 0 0 3px #d4af3724;
+}
+
+.check { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: var(--gray); line-height: 1.45; cursor: pointer; }
+.check input[type="checkbox"] {
+  -webkit-appearance: checkbox; appearance: auto; width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px;
+  accent-color: var(--gold); cursor: pointer;
+}
+
+.dd { position: relative; }
+.dd.open { z-index: 60; }
+.dd-btn {
+  width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 0 16px; background: var(--field); border: 1px solid var(--border); border-radius: 14px;
+  font-size: 15.5px; color: var(--gray); text-align: left; outline: none; transition: border-color .2s, box-shadow .2s, color .2s;
+}
+.dd-btn.filled { color: var(--ink); }
+.dd-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.dd-btn svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: transform .35s cubic-bezier(.2,.9,.3,1); }
+.dd.open .dd-btn, .dd-btn:focus-visible { border-color: var(--gold); box-shadow: 0 0 0 3px #d4af3724; }
+.dd.open .dd-btn svg { transform: rotate(180deg); }
+.dd.error .dd-btn { border-color: #e5484d; animation: shake .4s; }
+@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+.dd-list {
+  position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 50; list-style: none;
+  max-height: 252px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
+  padding: 6px; background: var(--panel2); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow);
+  opacity: 0; visibility: hidden; transform: translateY(-8px) scale(.96); transform-origin: top center;
+  transition: opacity .2s ease, transform .32s cubic-bezier(.2,.9,.3,1.1), visibility .2s;
+}
+.dd-list::-webkit-scrollbar { display: none; }
+.dd.up .dd-list { top: auto; bottom: calc(100% + 8px); transform: translateY(8px) scale(.96); transform-origin: bottom center; }
+.dd.open .dd-list { opacity: 1; visibility: visible; transform: none; }
+.dd-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 46px; padding: 0 14px; border-radius: 12px; font-size: 14.5px; color: var(--ink); cursor: pointer; transition: background .15s; }
+.dd-list li.active { background: color-mix(in srgb, var(--gold) 16%, transparent); }
+.dd-list li.sel { font-weight: 600; }
+.dd-list li.sel::after { content: ""; width: 6px; height: 12px; border: solid var(--gold); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translateY(-2px); flex-shrink: 0; }
+
+.contact-form button[type="submit"] { width: 100%; }
+.form-note { grid-column: 1 / -1; color: var(--gray); font-size: 12px; text-align: center; }
+
+/* =========================================
+   12. FOOTER Y WHATSAPP
+   ========================================= */
+footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(--border); }
+.footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.footer-logo {
+  display: inline-flex; align-items: baseline; gap: .35em; white-space: nowrap; font-size: 20px; line-height: 1;
+}
+.footer-logo .l1 { font-family: var(--serif); font-weight: 700; text-transform: uppercase; color: var(--ink); }
+.footer-logo .l2 {
+  font-family: var(--spotify); font-weight: 900; font-size: 0.75em; letter-spacing: -0.03em;
+  color: var(--gold); text-transform: uppercase; background: #1e1b12; padding: 3px 7px; border-radius: 6px; border: 1px solid var(--gold-d);
+}
+.footer-links { display: flex; gap: 20px; font-size: 13px; color: var(--gray); }
+.footer-copy { font-size: 11px; color: var(--gray); }
+
+.wa {
+  position: fixed; right: 18px; bottom: calc(18px + var(--safe-b)); z-index: 90; width: 56px; height: 56px;
+  display: grid; place-items: center; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d)); color: var(--on-gold);
+  box-shadow: 0 8px 28px #0009, 0 0 0 6px #d4af3722; transition: transform .2s;
+}
+.wa:active { transform: scale(.92); }
+.wa .ico { width: 26px; height: 26px; }
+
+/* =========================================
+   13. ANIMACIONES Y RESPONSIVE
+   ========================================= */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+@media(max-width: 960px) {
+  .faq-layout, .contact-layout { grid-template-columns: minmax(0, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paths-grid { grid-template-columns: minmax(0, 1fr); max-width: 600px; margin-inline: auto; }
+}
+
+@media(max-width: 720px) {
+  section { padding: 52px 0; }
+  .menu-btn { display: grid; }
+  .nav-links {
+    position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg);
+    flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 14px 20px calc(24px + var(--safe-b));
+    font-size: 17px; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: .25s;
+  }
+  .nav-links.open { opacity: 1; visibility: visible; transform: none; }
+  .nav-links a:not(.btn) { padding: 18px 4px; border-bottom: 1px solid var(--border); font-weight: 600; color: var(--ink); }
+  .nav-links .btn { margin-top: 16px; min-height: 54px; font-size: 15px; }
+  .nav-links .btn + .btn { margin-top: 10px; }
+  .actions { margin-left: auto; }
+  .hero { padding: 32px 0 44px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .hero-buttons .btn { flex: 1 1 100%; }
+  .cine { max-width: 360px; }
+  .services-grid { grid-template-columns: minmax(0, 1fr); }
+  .process-grid { grid-template-columns: minmax(0, 1fr); }
+  .process { display: grid; grid-template-columns: 52px minmax(0, 1fr); column-gap: 16px; align-items: start; }
+  .process-number { grid-column: 2; grid-row: 1; }
+  .process .icon-circle { grid-column: 1; grid-row: 1 / 4; margin: 0; }
+  .process h3 { grid-column: 2; margin: 6px 0 4px; }
+  .process p { grid-column: 2; }
+  .contact-form { grid-template-columns: minmax(0, 1fr); }
+  .look { width: 175px; }
+  .footer-grid { flex-direction: column; text-align: center; justify-content: center; }
+  .footer-links { justify-content: center; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ICONOS SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17v4M17 19h4"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4h4l12 6V4L7 10H3zM7 14l2 7h4l-2-5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 4a4 4 0 0 1 0 8M19 15a5 5 0 0 1 3 4v2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 7h7l-5.5 4.5 2 8L12 17l-6.5 4.5 2-8L2 9h7z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.8-4.5A8 8 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M5 17v-5h4v5M11 17V7h4v10M17 17V3h4v14"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5a8.5 8.5 0 1 1 15.5-4.5z"/><path d="M9 8c0 4 3 7 7 7l1-2-3-1-1 1-3-3 1-1-1-2z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo" aria-label="Studio +Viral">
+      <span class="l1">Studio</span>
+      <span class="l2">+Viral</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#caminos">Acceso</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#lookbook">Estilos & Bailarinas</a>
+      <a href="#proceso">Estrategia</a>
+      <a href="#faq">FAQ</a>
+      <a href="#servicio" class="btn btn-gold">Elevar mi marca</a>
+      <a href="#inscripcion" class="btn">Ser talento</a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema">
+        <svg class="ico i-sun"><use href="#i-sun"/></svg>
+        <svg class="ico i-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">
+        <span class="bars"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO PRINCIPAL -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="hero-label">Marketing de Influencers · Modelos · Bailarinas</div>
+      <h1>Ayudamos a darle <em>prestigio</em> a tu marca con marketing y distribución viral<span class="spotify-tag gold">.</span></h1>
+      <p class="hero-description">
+        Las mujeres llaman la atención por naturaleza. Con el poder de nuestro selecto equipo de modelos de alta gama, bailarinas profesionales, influencers y creadoras de contenido magnético, generamos un alcance mundial en TikTok, Instagram y YouTube. Convertimos miradas en deseo, prestigio y ventas exponenciales para tu negocio.
+      </p>
+      <div class="hero-buttons">
+        <a href="#servicio" class="btn btn-gold">Escalar mi marca <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#inscripcion" class="btn">Unirme al elenco</a>
+      </div>
+      <div class="hero-trust" aria-label="Ventajas">
+        <div class="trust-item"><svg class="ico"><use href="#i-globe"/></svg> Alcance e impacto global</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-music"/></svg> Bailarinas & tendencias TikTok</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-star"/></svg> Modelos con imagen de prestigio</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-film"/></svg> Estética cinematográfica</div>
+        <div class="trust-item"><svg class="ico"><use href="#i-message"/></svg> Contacto directo WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="reveal" aria-hidden="true">
+      <div class="cine">
+        <!-- Imagen de modelo/bailarina en movimiento y producción de alto impacto -->
+        <img class="cine-img" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=900&q=75&auto=format&fit=crop" alt="Bailarina y modelo profesional en estudio" loading="eager" decoding="async">
+        <div class="cine-bar t"><span class="rec">REC</span><span>Studio <span class="spotify-tag">+Viral</span></span></div>
+        <div class="cine-caption">
+          <small>Campaña Viral · Visual Magnet</small>
+          <strong>La belleza en movimiento domina las miradas.</strong>
+        </div>
+        <div class="cine-bar b"><span>2.39 : 1</span><span>4K · 60 fps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CINTA ANIMADA -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+  </div>
+</div>
+
+<!-- DOS CAMINOS (CON IMÁGENES DE FONDO) -->
+<section id="caminos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">// Elige tu puerta de entrada</span>
+      <h2>Potenciamos marcas y talentos con brillo mundial<span class="gold">.</span></h2>
+      <p>Ya sea que quieras que el mundo hable de tu producto o quieras monetizar tu belleza, baile y carisma.</p>
+    </div>
+    <div class="paths-grid">
+      
+      <!-- CAMINO 1: PARA MARCAS (Foto de fondo de moda y producción) -->
+      <article class="path card card-img featured reveal" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=75&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-star"/></svg></div>
+        <h3>Para Marcas & Empresas</h3>
+        <p>Aumenta el prestigio percibido de tu marca contratando a las mejores modelos, bailarinas e influencers con alcance internacional.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Campañas masivas en TikTok, Instagram y Reels</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Trends coreográficos con bailarinas profesionales</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Estrategias de distribución y pauta cinematográfica</li>
+        </ul>
+        <a href="#servicio" class="btn btn-gold">Solicitar propuesta exclusiva <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <!-- CAMINO 2: PARA MODELOS Y BAILARINAS (Foto de fondo de bailarina en escenario) -->
+      <article class="path card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=75&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-music"/></svg></div>
+        <h3>Para Modelos & Bailarinas</h3>
+        <p>Trabaja con marcas internacionales de moda, cosmética, música y lifestyle. Convierte tu talento en contratos continuos.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Casting abierto para modelos, bailarinas y creadoras</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Campañas pagadas, producciones y videoclips</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Representación seria con acuerdos directos</li>
+        </ul>
+        <a href="#inscripcion" class="btn">Postularme al elenco <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS CON IMÁGENES LIBRES DE DERECHOS DE FONDO -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">// Nuestro poder de fuego</span>
+      <h2>Servicios creados para viralizar y dar estatus<span class="gold">.</span></h2>
+      <p>Combinamos arte visual, talento femenino hipnótico y distribución algorítmica masiva.</p>
+    </div>
+    <div class="services-grid">
+      
+      <!-- SERVICIO 1: MODELAJE (Foto editorial alta costura) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-camera"/></svg></div>
+        <h3>Modelos de Alta Gama</h3>
+        <p>Selección rigurosa de modelos publicitarias para catálogos, lookbooks de lujo y sesiones de fotos que posicionan tu marca en la cima.</p>
+      </article>
+
+      <!-- SERVICIO 2: BAILARINAS (Foto bailarina contemporánea en salto dinámico) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-music"/></svg></div>
+        <h3>Bailarinas & Trends Virales</h3>
+        <p>Coreografías hipnóticas, retos de baile en TikTok y reels dinámicos diseñados para capturar la retención de millones de personas.</p>
+      </article>
+
+      <!-- SERVICIO 3: INFLUENCERS (Foto creadora de contenido con estilo) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
+        <h3>Marketing de Influencers</h3>
+        <p>Colocamos tu producto en manos de creadoras con audiencias masivas, leales y altamente comprometidas en todo el mundo hispano.</p>
+      </article>
+
+      <!-- SERVICIO 4: REELS CINEMATOGRÁFICOS (Foto cámara de cine / backstage) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-film"/></svg></div>
+        <h3>Reels Cinematográficos</h3>
+        <p>Grabación con iluminación de estudio, óptica de cine y etalonaje de color profesional para proyectar opulencia y máxima calidad.</p>
+      </article>
+
+      <!-- SERVICIO 5: DISTRIBUCIÓN MUNDIAL (Foto concierto / luces / escala) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-globe"/></svg></div>
+        <h3>Distribución & Pauta Global</h3>
+        <p>Estrategia de amplificación publicitaria en Meta Ads y TikTok Ads para que el contenido sea visto por millones en tu nicho objetivo.</p>
+      </article>
+
+      <!-- SERVICIO 6: LANZAMIENTO EXCLUSIVO (Foto pasarela / evento exclusivo) -->
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=70&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-sparkle"/></svg></div>
+        <h3>Lanzamientos & Activaciones</h3>
+        <p>Despliegue integral de modelos y bailarinas para inauguraciones, eventos VIP, desfiles y activaciones que rompen internet.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK Y ESTILOS -->
+<section id="lookbook">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">// Galería de talento</span>
+      <h2>El magnetismo de nuestro elenco<span class="gold">.</span></h2>
+      <p>Desliza para apreciar la versatilidad de estilos, ritmo y presencia visual que representamos.</p>
+    </div>
+    <div class="lookbook reveal" aria-label="Universos y estilos">
+      
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=75&auto=format&fit=crop" alt="Editorial Fashion" loading="lazy">
+        <small>01</small><strong>Editorial & Moda</strong>
+      </article>
+
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&q=75&auto=format&fit=crop" alt="Bailarinas Urbanas" loading="lazy">
+        <small>02</small><strong>Bailarinas & Dance</strong>
+      </article>
+
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=75&auto=format&fit=crop" alt="Influencers de Élite" loading="lazy">
+        <small>03</small><strong>Top Influencers</strong>
+      </article>
+
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=75&auto=format&fit=crop" alt="Street style" loading="lazy">
+        <small>04</small><strong>Street Chic & Trends</strong>
+      </article>
+
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=75&auto=format&fit=crop" alt="Cine y Coreografía" loading="lazy">
+        <small>05</small><strong>Coreografías 4K</strong>
+      </article>
+
+      <article class="look">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=75&auto=format&fit=crop" alt="Lujo y Campañas" loading="lazy">
+        <small>06</small><strong>Lujo & Glamour</strong>
+      </article>
+
+    </div>
+    <p class="look-note">Todas las imágenes son referencias fotográficas de alta calidad para producción publicitaria.</p>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">// Método probado</span>
+      <h2>De la estrategia a la viralidad absoluta<span class="gold">.</span></h2>
+      <p>Un proceso estructurado para garantizar retorno de inversión y brillo de marca.</p>
+    </div>
+    <div class="process-grid">
+      <article class="process card reveal">
+        <span class="process-number">01 / BRIEF</span>
+        <div class="icon-circle"><svg class="ico"><use href="#i-message"/></svg></div>
+        <h3>Estrategia & Objetivos</h3>
+        <p>Definimos el target, el prestigio deseado y el concepto visual clave de tu campaña.</p>
+      </article>
+      <article class="process card reveal">
+        <span class="process-number">02 / CASTING</span>
+        <div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
+        <h3>Casting Selecto</h3>
+        <p>Asignamos a las modelos, bailarinas y creadoras que calzan con el ADN de tu producto.</p>
+      </article>
+      <article class="process card reveal">
+        <span class="process-number">03 / PRODUCCIÓN</span>
+        <div class="icon-circle"><svg class="ico"><use href="#i-film"/></svg></div>
+        <h3>Creación & Baile</h3>
+        <p>Grabación con dirección de arte, coreografía y producción en alta definición.</p>
+      </article>
+      <article class="process card reveal">
+        <span class="process-number">04 / DISTRIBUCIÓN</span>
+        <div class="icon-circle"><svg class="ico"><use href="#i-chart"/></svg></div>
+        <h3>Impacto & Pauta</h3>
+        <p>Distribución en redes, monitoreo de reproducciones, alcance masivo y reporte final.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container faq-layout">
+    <div class="faq-title reveal">
+      <span class="tag">// Claridad total</span>
+      <h2>Preguntas Frecuentes<span class="gold">.</span></h2>
+      <p>Todo lo que necesitas saber antes de lanzar tu próxima campaña.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>¿Por qué las modelos y bailarinas impulsan más las ventas?</summary>
+        <p>El dinamismo visual, la belleza y la coreografía retienen la atención en los primeros 3 segundos de un video en redes sociales, reduciendo el costo por adquisición y elevando el valor percibido del producto.</p>
+      </details>
+      <details>
+        <summary>¿Puedo contratar sólo bailarinas para crear un trend musical o de producto?</summary>
+        <p>Totalmente. Desarrollamos la coreografía, adaptamos el audio en tendencia (TikTok/Reels/Shorts) y activamos a nuestro grupo de bailarinas para replicar el trend en cadena.</p>
+      </details>
+      <details>
+        <summary>¿Cómo postulan las modelos y bailarinas al elenco?</summary>
+        <p>Solo para mayores de 18 años. Completan el formulario en la pestaña "Inscribirme", comparten sus perfiles sociales y nuestro equipo de scouting coordina una entrevista por WhatsApp.</p>
+      </details>
+      <details>
+        <summary>¿Trabajan con marcas y tiendas de cualquier tamaño?</summary>
+        <p>Sí. Diseñamos planes desde cápsulas de contenido para tiendas de moda emergentes hasta campañas de gran escala con pauta internacional para marcas consolidadas.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container contact-layout">
+    <div class="reveal">
+      <span class="tag">// Inicia hoy</span>
+      <h2 class="contact-title">Lleva tu marca al siguiente nivel con <span class="spotify-tag gold">+Viral</span>.</h2>
+      <p class="contact-description">
+        Selecciona tu perfil, cuéntanos tus metas y te responderemos inmediatamente a través de WhatsApp con una propuesta personalizada.
+      </p>
+    </div>
+
+    <div class="form-card card reveal">
+      <div class="tabs" role="tablist" aria-label="Tipo de consulta">
+        <button class="tab" role="tab" id="tabServicio" aria-controls="formServicio" aria-selected="true" type="button">Soy una Marca</button>
+        <button class="tab" role="tab" id="tabInscripcion" aria-controls="formInscripcion" aria-selected="false" type="button">Soy Modelo / Bailarina</button>
+      </div>
+
+      <!-- FORMULARIO 1: MARCAS -->
+      <form class="contact-form" id="formServicio" role="tabpanel" aria-labelledby="tabServicio">
+        <div class="field"><input id="s-nombre" placeholder="Tu nombre" required></div>
+        <div class="field"><input id="s-contacto" placeholder="Tu WhatsApp o email" required></div>
+        <div class="field full"><input id="s-marca" placeholder="Nombre de tu marca o empresa" required></div>
+        <div class="field full sel">
+          <select id="s-servicio" data-req="1">
+            <option value="">¿Qué servicio necesitas?</option>
+            <option>Campaña con Modelos de Élite</option>
+            <option>Bailarinas & Trends Coreográficos en TikTok</option>
+            <option>Marketing con Influencers & Creadoras</option>
+            <option>Producción de Reels Cinematográficos</option>
+            <option>Lanzamiento Exclusivo de Producto / Evento</option>
+            <option>Estrategia Completa de Distribución Global</option>
+          </select>
+        </div>
+        <div class="field full sel">
+          <select id="s-presupuesto">
+            <option value="">Presupuesto estimado (opcional)</option>
+            <option>USD $150 - $400</option>
+            <option>USD $400 - $1,000</option>
+            <option>USD $1,000 - $3,000</option>
+            <option>Más de USD $3,000</option>
+          </select>
+        </div>
+        <div class="field full"><textarea id="s-mensaje" placeholder="Describe tu producto, metas de alcance y qué estética buscas proyectar..." required></textarea></div>
+        <div class="field full"><button class="btn btn-gold" type="submit">Enviar propuesta por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <p class="form-note">Trato directo y confidencial. Se abrirá una conversación en tu WhatsApp.</p>
+      </form>
+
+      <!-- FORMULARIO 2: TALENTO (MODELOS / BAILARINAS) -->
+      <form class="contact-form" id="formInscripcion" role="tabpanel" aria-labelledby="tabInscripcion" hidden>
+        <div class="field"><input id="i-nombre" placeholder="Nombre completo" required></div>
+        <div class="field"><input id="i-contacto" placeholder="Número de WhatsApp" required></div>
+        <div class="field"><input id="i-ciudad" placeholder="Ciudad y País" required></div>
+        <div class="field"><input id="i-redes" placeholder="Instagram y/o TikTok (@usuario)" required></div>
+        <div class="field full sel">
+          <select id="i-categoria" data-req="1">
+            <option value="">¿Cuál es tu disciplina principal?</option>
+            <option>Modelo (Editorial / Pasarela / Comercial)</option>
+            <option>Bailarina Profesional (Urbano / Jazz / Moderno)</option>
+            <option>Influencer de Lifestyle / Moda</option>
+            <option>Actriz / Creadora de Contenido UGC</option>
+          </select>
+        </div>
+        <div class="field full sel">
+          <select id="i-seguidores">
+            <option value="">Rango de audiencia (opcional)</option>
+            <option>Menos de 2.000 seguidores</option>
+            <option>2.000 a 15.000 seguidores</option>
+            <option>15.000 a 80.000 seguidores</option>
+            <option>Más de 80.000 seguidores</option>
+          </select>
+        </div>
+        <div class="field full"><textarea id="i-mensaje" placeholder="Cuéntanos tu experiencia previa, altura/medidas (si aplica a modelaje), estilos de baile y disponibilidad..."></textarea></div>
+        <div class="field full">
+          <label class="check"><input type="checkbox" id="i-edad" required><span>Confirmo que soy mayor de 18 años.</span></label>
+        </div>
+        <div class="field full">
+          <label class="check"><input type="checkbox" id="i-imagen" required><span>Autorizo la evaluación de mi perfil para propuestas con marcas.</span></label>
+        </div>
+        <div class="field full"><button class="btn btn-gold" type="submit">Postularme por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <p class="form-note">Tus datos están protegidos. Respuesta directa con el equipo de casting.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <a href="#inicio" class="footer-logo" aria-label="Studio +Viral">
+      <span class="l1">Studio</span>
+      <span class="l2">+Viral</span>
+    </a>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#caminos">Marcas & Talento</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <span class="footer-copy">© 2026 STUDIO +VIRAL · MARKETING DE INFLUENCERS & TALENTO · TODOS LOS DERECHOS RESERVADOS</span>
+  </div>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/5492920247733" class="wa" aria-label="Contactar por WhatsApp directo" target="_blank" rel="noopener">
+  <svg class="ico"><use href="#i-whatsapp"/></svg>
+</a>
+
+<script>
+document.documentElement.classList.add("js");
+
+const CONFIG = { whatsapp: "5492920247733" };
+const $ = id => document.getElementById(id);
+
+// 1. Alternador de tema Claro / Oscuro
+const themeBtn = $("themeBtn"), metaTheme = $("metaTheme");
+function applyTheme(t, save) {
+  document.documentElement.setAttribute("data-theme", t);
+  if (metaTheme) metaTheme.setAttribute("content", t === "light" ? "#ffffff" : "#0a0908");
+  themeBtn.setAttribute("aria-pressed", t === "light");
+  if (save) { try { localStorage.setItem("sv-theme", t); } catch (e) {} }
+}
+applyTheme(document.documentElement.getAttribute("data-theme") || "dark", false);
+themeBtn.addEventListener("click", () => {
+  applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light", true);
+});
+
+// 2. Menú de navegación móvil
+const menuBtn = $("menuBtn"), navLinks = $("navLinks");
+function setMenu(open) {
+  navLinks.classList.toggle("open", open);
+  menuBtn.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", open);
+  document.body.style.overflow = open && innerWidth <= 720 ? "hidden" : "";
+}
+menuBtn.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+addEventListener("resize", () => { if (innerWidth > 720) setMenu(false); });
+
+// 3. Efecto reveal al hacer scroll
+const items = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { threshold: .1, rootMargin: "0px 0px -25px 0px" });
+  items.forEach(el => io.observe(el));
+} else {
+  items.forEach(el => el.classList.add("visible"));
+}
+
+// 4. Selectores estilizados personalizados
+document.querySelectorAll(".contact-form select").forEach(sel => {
+  const host = sel.parentElement;
+  const opts = [...sel.options];
+  const dd = document.createElement("div"); dd.className = "dd";
+
+  const btn = document.createElement("button");
+  btn.type = "button"; btn.className = "dd-btn";
+  btn.setAttribute("aria-haspopup", "listbox"); btn.setAttribute("aria-expanded", "false");
+  btn.innerHTML = '<span class="dd-label"></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
+  const label = btn.firstChild;
+
+  const list = document.createElement("ul"); list.className = "dd-list"; list.setAttribute("role", "listbox");
+  const listItems = [];
+
+  opts.forEach((o, i) => {
+    if (!o.value && i === 0) return;
+    const li = document.createElement("li");
+    li.setAttribute("role", "option"); li.textContent = o.textContent; li.dataset.v = o.value || o.textContent;
+    li.addEventListener("click", () => { choose(li); close(); btn.focus(); });
+    list.appendChild(li); listItems.push(li);
+  });
+
+  dd.append(btn, list);
+  sel.style.display = "none"; sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true");
+  host.appendChild(dd);
+  let act = -1;
+
+  function sync() {
+    const cur = sel.value;
+    label.textContent = cur || opts[0].textContent;
+    btn.classList.toggle("filled", !!cur);
+    listItems.forEach(li => li.classList.toggle("sel", li.dataset.v === cur));
+  }
+  function choose(li) {
+    const o = opts.find(x => (x.value || x.textContent) === li.dataset.v);
+    sel.value = o.value || o.textContent;
+    dd.classList.remove("error");
+    sel.dispatchEvent(new Event("change"));
+  }
+  function setActive(i) {
+    if (!listItems.length) return;
+    act = (i + listItems.length) % listItems.length;
+    listItems.forEach((li, k) => li.classList.toggle("active", k === act));
+    listItems[act].scrollIntoView({ block: "nearest" });
+  }
+  function open() {
+    document.querySelectorAll(".dd.open").forEach(d => d !== dd && d.classList.remove("open"));
+    const r = btn.getBoundingClientRect();
+    const below = innerHeight - r.bottom, above = r.top;
+    dd.classList.toggle("up", below < 270 && above > below);
+    dd.classList.add("open"); btn.setAttribute("aria-expanded", "true");
+    const s = listItems.findIndex(li => li.classList.contains("sel"));
+    setActive(s >= 0 ? s : 0);
+    if (s >= 0) list.scrollTop = Math.max(0, listItems[s].offsetTop - list.clientHeight / 2 + 23);
+  }
+  function close() {
+    dd.classList.remove("open"); btn.setAttribute("aria-expanded", "false");
+    listItems.forEach(li => li.classList.remove("active"));
+  }
+
+  btn.addEventListener("click", () => dd.classList.contains("open") ? close() : open());
+  btn.addEventListener("keydown", e => {
+    const isOpen = dd.classList.contains("open");
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!isOpen) open(); else setActive(act + (e.key === "ArrowDown" ? 1 : -1));
+    } else if (e.key === "Enter" || e.key === " ") {
+      if (isOpen) { e.preventDefault(); if (act >= 0) choose(listItems[act]); close(); }
+    } else if (e.key === "Escape" || e.key === "Tab") { close(); }
+  });
+  document.addEventListener("pointerdown", e => { if (!dd.contains(e.target)) close(); });
+  listItems.forEach((li, k) => li.addEventListener("pointerenter", () => { if (matchMedia("(hover:hover)").matches) setActive(k); }));
+  sel.addEventListener("change", sync);
+  sync();
+});
+
+// 5. Gestión de pestañas (Marcas / Talento)
+const tabs = { servicio: { tab: $("tabServicio"), form: $("formServicio") }, inscripcion: { tab: $("tabInscripcion"), form: $("formInscripcion") } };
+function showTab(name) {
+  Object.keys(tabs).forEach(k => {
+    const on = k === name;
+    tabs[k].tab.setAttribute("aria-selected", on);
+    tabs[k].form.hidden = !on;
+  });
+}
+Object.keys(tabs).forEach(k => tabs[k].tab.addEventListener("click", () => showTab(k)));
+
+function goToForm(name) {
+  showTab(name);
+  const target = $("contacto");
+  if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+document.querySelectorAll('a[href="#servicio"], a[href="#inscripcion"]').forEach(a => {
+  a.addEventListener("click", e => {
+    e.preventDefault();
+    goToForm(a.getAttribute("href") === "#inscripcion" ? "inscripcion" : "servicio");
+  });
+});
+if (location.hash === "#inscripcion") showTab("inscripcion");
+
+// 6. Envío de datos a WhatsApp con formato profesional
+function validateSelects(form) {
+  for (const s of form.querySelectorAll("select[data-req]")) {
+    if (!s.value) {
+      const d = s.parentElement.querySelector(".dd");
+      d.classList.remove("error"); void d.offsetWidth; d.classList.add("error");
+      d.scrollIntoView({ block: "center", behavior: "smooth" });
+      d.querySelector(".dd-btn").click();
+      return false;
+    }
+  }
+  return true;
+}
+function sendWA(lines) {
+  window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+}
+const g = id => $(id).value.trim();
+
+// Submit Formulario Marcas
+$("formServicio").addEventListener("submit", e => {
+  e.preventDefault();
+  if (!validateSelects(e.target)) return;
+  sendWA([
+    "⭐ *SOLICITUD DE CAMPAÑA | STUDIO +VIRAL* ⭐",
+    "",
+    "👤 *Nombre:* " + g("s-nombre"),
+    "📱 *Contacto:* " + g("s-contacto"),
+    "🏢 *Marca o Negocio:* " + g("s-marca"),
+    "🎯 *Servicio solicitado:* " + g("s-servicio"),
+    "💰 *Presupuesto estimado:* " + (g("s-presupuesto") || "A definir en propuesta"),
+    "",
+    "📝 *Detalles de la campaña:*",
+    g("s-mensaje")
+  ]);
+});
+
+// Submit Formulario Modelos / Bailarinas
+$("formInscripcion").addEventListener("submit", e => {
+  e.preventDefault();
+  if (!validateSelects(e.target)) return;
+  if (!$("i-edad").checked || !$("i-imagen").checked) return;
+  sendWA([
+    "✨ *POSTULACIÓN DE TALENTO | STUDIO +VIRAL* ✨",
+    "",
+    "👤 *Nombre:* " + g("i-nombre"),
+    "📱 *WhatsApp:* " + g("i-contacto"),
+    "📍 *Ciudad / País:* " + g("i-ciudad"),
+    "🔗 *Redes:* " + g("i-redes"),
+    "🎭 *Disciplina:* " + g("i-categoria"),
+    "👥 *Seguidores:* " + (g("i-seguidores") || "En crecimiento"),
+    "✅ *Mayor de 18 años:* Sí",
+    "✅ *Autorización de imagen:* Sí",
+    "",
+    "💬 *Sobre mi trayectoria y estilo:*",
+    g("i-mensaje") || "Sin detalles adicionales"
+  ]);
+});
+</script>
+</body>
+  </html>
