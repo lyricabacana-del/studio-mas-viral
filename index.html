@@ -3,57 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0a0908" id="metaTheme">
+<meta name="theme-color" content="#050403" id="metaTheme">
 <meta name="color-scheme" content="dark light">
-<meta name="description" content="Studio +Viral: Agencia de marketing de influencers, modelos y bailarinas. Elevamos el prestigio y alcance de marcas con contenido magnético y distribución global.">
-<title>Studio +Viral | Agencia de Influencers, Modelos & Bailarinas</title>
+<meta name="description" content="Studio +Viral: Agencia de marketing de modelos e influencers. Elevamos el prestigio y alcance de marcas con contenido magnético y distribución global.">
+<title>Studio +Viral | Agencia de Modelos e Influencers</title>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0908'/%3E%3Cpath d='M20 32h24M32 20v24' stroke='%23d4af37' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f0d67a'/%3E%3Cstop offset='1' stop-color='%23a8861f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23050403'/%3E%3Cpath d='M20 32h24M32 20v24' stroke='url(%23g)' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Studio +Viral">
 <meta property="og:locale" content="es_AR">
-<meta property="og:title" content="Studio +Viral | Marketing con Modelos, Bailarinas e Influencers">
-<meta property="og:description" content="Damos prestigio y distribución masiva a tu marca con un elenco selecto de modelos, bailarinas y creadoras virales.">
+<meta property="og:title" content="Studio +Viral | Marketing con Modelos e Influencers">
+<meta property="og:description" content="Damos prestigio y distribución masiva a su marca con un elenco selecto de modelos e influencers virales.">
 
 <script>
 (function () {
-  var t = null;
-  try { t = localStorage.getItem("sv-theme"); } catch (e) {}
+  var t = null, l = null;
+  try { t = localStorage.getItem("sv-theme"); l = localStorage.getItem("sv-lang"); } catch (e) {}
   if (t !== "light" && t !== "dark") {
     t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   }
   document.documentElement.setAttribute("data-theme", t);
+  if (l !== "es" && l !== "en") l = "es";
+  document.documentElement.setAttribute("lang", l);
   var m = document.getElementById("metaTheme");
-  if (m) m.setAttribute("content", t === "light" ? "#ffffff" : "#0a0908");
+  if (m) m.setAttribute("content", t === "light" ? "#ffffff" : "#050403");
 })();
 </script>
 
 <style>
 /* =========================================
-   1. VARIABLES Y TEMAS
+   1. VARIABLES Y TEMAS (negro + dorado sutil)
    ========================================= */
 :root {
-  --bg: #0a0908;
-  --panel: #12100d;
-  --panel2: #1a1712;
-  --field: #070605;
+  --bg: #050403;
+  --panel: #0c0a07;
+  --panel2: #14110c;
+  --field: #0a0908;
   --ink: #f4efe6;
   --gray: #a79f90;
-  --border: #2a2519;
+  --border: #211d14;
+
   --gold: #d4af37;
-  --gold-l: #ecd27a;
+  --gold-l: #f0d67a;
   --gold-d: #a8861f;
-  --on-gold: #14110b;
-  --bar: #000;
-  --shadow: 0 24px 60px #000c;
-  --r: 18px;
-  --serif: "Playfair Display", "Didot", "Bodoni MT", Georgia, serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --on-gold: #0a0908;
+
+  --shadow: 0 24px 60px #000e;
+  --r: 16px;
   --spotify: "Montserrat", -apple-system, system-ui, sans-serif;
   --safe-b: env(safe-area-inset-bottom, 0px);
 }
@@ -66,11 +67,10 @@
   --ink: #1a1610;
   --gray: #6f6657;
   --border: #e6dfcf;
-  --gold: #b8902a;
+  --gold: #a8861f;
   --gold-l: #d4af37;
-  --gold-d: #8f6e17;
+  --gold-d: #8a6d12;
   --on-gold: #14110b;
-  --bar: #000;
   --shadow: 0 24px 60px #3a2f1433;
 }
 
@@ -87,9 +87,9 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.6;
+  font-family: var(--spotify);
+  font-size: 13.5px;
+  line-height: 1.55;
   overflow-x: hidden;
   max-width: 100%;
   -webkit-font-smoothing: antialiased;
@@ -101,76 +101,82 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 a { text-decoration: none; color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; -webkit-appearance: none; appearance: none; border-radius: 0; }
 button { cursor: pointer; background: none; border: 0; }
-.container { width: min(1140px, 100% - 40px); margin-inline: auto; }
-section { padding: 64px 0; }
+.container { width: min(1080px, 100% - 36px); margin-inline: auto; }
+section { padding: 48px 0; }
 em { font-style: italic; }
 
 .gold { color: var(--gold); }
-.tag { display: inline-block; color: var(--gold); font-size: 11px; letter-spacing: .24em; font-weight: 700; text-transform: uppercase; }
+.tag { display: inline-block; color: var(--gold-l); font-size: 10.5px; letter-spacing: .22em; font-weight: 800; text-transform: uppercase; }
 
-/* Tipografía pequeña estilo Spotify (+Viral) */
-.spotify-tag {
+h1, h2, h3, h4, p, a, span, li, button, input, select, textarea, summary, label, small, strong, em, div {
   font-family: var(--spotify);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  font-size: 0.88em;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
+  letter-spacing: -0.03em;
 }
-.spotify-badge {
-  display: inline-block;
-  font-family: var(--spotify);
-  font-weight: 800;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #121212;
-  color: #1ed760;
-  border: 1px solid #1ed76044;
-  vertical-align: middle;
+
+h1, h2, h3 {
   text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.metal-gold {
+  background: linear-gradient(180deg, #fff3b0 0%, #f0d67a 22%, #d4af37 52%, #a8861f 82%, #f0d67a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(0 0 10px rgba(212,175,55,.3));
 }
 
 /* =========================================
-   2. COMPONENTES Y TARJETAS CON FONDOS
+   2. COMPONENTES
    ========================================= */
 .card {
   background: var(--panel);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(212,175,55,.13);
   border-radius: var(--r);
   transition: background .3s, border-color .3s, transform .25s, box-shadow .3s;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0,0,0,.22);
+}
+:root[data-theme="light"] .card {
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
 }
 
-/* Tarjetas con fotos fotográficas de referencia de fondo */
 .card-img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   isolation: isolate;
+  border: 0;
+  box-shadow: inset 0 0 60px rgba(0,0,0,.55);
 }
 .card-img::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 9, 8, 0.76) 0%, rgba(10, 9, 8, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(5,4,3,.42) 0%, rgba(5,4,3,.9) 100%);
   z-index: 1;
-  transition: opacity .35s ease, background .35s ease;
+  transition: opacity .35s ease;
 }
 :root[data-theme="light"] .card-img::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(246, 241, 232, 0.96) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(250, 247, 240, 0.95) 100%);
+}
+.card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.4) 100%);
+  transition: opacity .35s ease;
 }
 @media(hover: hover) {
-  .card-img:hover::before {
-    opacity: 0.85;
-  }
+  .card-img:hover::before { opacity: 0.86; }
   .card-img:hover {
-    border-color: var(--gold);
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+    transform: translateY(-3px);
+    box-shadow: inset 0 0 60px rgba(0,0,0,.55), 0 14px 30px rgba(0,0,0,0.45);
   }
 }
 .card-img > * {
@@ -178,120 +184,187 @@ em { font-style: italic; }
   z-index: 2;
 }
 
-.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
 .icon-circle {
-  width: 52px; height: 52px; display: grid; place-items: center; flex-shrink: 0;
-  border: 1px solid var(--gold-d); border-radius: 50%; background: rgba(26, 23, 18, 0.85); color: var(--gold);
+  width: 44px; height: 44px; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid rgba(212,175,55,.32); border-radius: 50%; background: rgba(12,10,7,.8); color: var(--gold-l);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
 :root[data-theme="light"] .icon-circle {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.section-head { margin-bottom: 30px; max-width: 680px; }
-.section-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 7vw, 44px); line-height: 1.08; letter-spacing: -.01em; margin: 10px 0 12px; }
-.section-head p { color: var(--gray); font-size: 15.5px; }
+.section-head { margin-bottom: 26px; max-width: 640px; }
+.section-head h2 { font-weight: 800; font-size: clamp(22px, 5vw, 32px); line-height: 1.06; letter-spacing: -.03em; margin: 8px 0 10px; }
+.section-head p { color: var(--gray); font-size: 13px; }
 
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 50px; padding: 0 24px; border-radius: 999px;
-  border: 1px solid var(--gold-d); background: rgba(18, 16, 13, 0.7); color: var(--ink);
-  font-weight: 700; font-size: 14px; letter-spacing: .02em; text-align: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 20px; border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.28);
+  background: linear-gradient(135deg, rgba(20,17,12,.9), rgba(5,4,3,.95));
+  color: var(--ink);
+  font-weight: 800; font-size: 13px; letter-spacing: -0.02em; text-align: center;
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  transition: transform .2s, border-color .2s, background .2s, box-shadow .3s;
+  transition: transform .2s, border-color .2s, box-shadow .3s;
 }
-.btn .ico { width: 18px; height: 18px; }
+:root[data-theme="light"] .btn {
+  background: #ffffff;
+  color: #1a1610;
+  border-color: rgba(168,134,31,.3);
+}
+.btn .ico { width: 16px; height: 16px; }
 .btn:active { transform: scale(.97); }
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d));
-  border-color: var(--gold); color: var(--on-gold);
-  box-shadow: 0 8px 28px #d4af3730;
+  background: linear-gradient(135deg, #f0d67a 0%, #d4af37 55%, #a8861f 100%);
+  border-color: rgba(212,175,55,.6); color: var(--on-gold);
+  box-shadow: 0 6px 20px rgba(212,175,55,.18);
 }
 @media(hover: hover) {
-  .btn:hover { border-color: var(--gold); }
-  .btn-gold:hover { box-shadow: 0 10px 34px #d4af3755; }
+  .btn:hover { border-color: rgba(212,175,55,.7); }
+  .btn-gold:hover { box-shadow: 0 8px 26px rgba(212,175,55,.32); }
 }
 
 /* =========================================
-   3. HEADER
+   3. HEADER (Sin menú hamburguesa)
    ========================================= */
 header {
-  position: sticky; top: 0; z-index: 100; height: 64px;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100; height: 58px;
+  background: linear-gradient(180deg, rgba(5,4,3,.96), rgba(5,4,3,.85));
+  border-bottom: 1px solid rgba(212,175,55,.12);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
-.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+:root[data-theme="light"] header {
+  background: linear-gradient(180deg, rgba(255,255,255,.97), rgba(255,255,255,.88));
+  border-bottom: 1px solid rgba(168,134,31,.18);
+}
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
 .logo {
-  display: inline-flex; align-items: baseline; gap: .35em; white-space: nowrap;
-  font-size: 20px; line-height: 1;
+  display: inline-flex; align-items: baseline; gap: .28em; white-space: nowrap;
+  font-size: 17px; line-height: 1;
+  letter-spacing: -0.04em;
 }
-.logo .l1 { font-family: var(--serif); font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); }
+.logo .l1 {
+  color: #fff;
+  font-weight: 300;
+  font-style: italic;
+  display: inline-block;
+  transform: skewX(-9deg);
+}
 .logo .l2 {
-  font-family: var(--spotify);
   font-weight: 900;
-  font-size: 0.75em;
-  letter-spacing: -0.03em;
-  color: var(--gold);
-  text-transform: uppercase;
-  background: #1e1b12;
-  padding: 3px 7px;
-  border-radius: 6px;
-  border: 1px solid var(--gold-d);
+  font-style: normal;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }
+:root[data-theme="light"] .logo .l1,
+:root[data-theme="light"] .logo .l2 { color: #1a1610; -webkit-text-fill-color: #1a1610; }
 
-.nav-links { display: flex; align-items: center; gap: 22px; font-size: 13px; color: var(--gray); margin-left: auto; }
-.nav-links a:not(.btn):hover { color: var(--gold); }
-.nav-links .btn { min-height: 40px; padding: 0 16px; font-size: 13px; }
-.nav-links .btn-gold { color: var(--on-gold); }
+.nav-links { display: flex; align-items: center; gap: 18px; font-size: 12.5px; color: var(--gray); margin-left: auto; }
+.nav-links a:not(.btn):hover { color: var(--gold-l); }
+.nav-links .btn { min-height: 36px; padding: 0 14px; font-size: 12px; border-color: rgba(212,175,55,.2); }
+.nav-links .btn-gold { color: var(--on-gold); border-color: rgba(212,175,55,.6); }
 
 .actions { display: flex; align-items: center; gap: 8px; }
 .icon-btn {
-  width: 44px; height: 44px; display: grid; place-items: center; flex-shrink: 0;
-  border: 1px solid var(--border); border-radius: 50%; background: var(--panel); color: var(--gold);
+  width: 40px; height: 40px; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid rgba(212,175,55,.22); border-radius: 50%;
+  background: linear-gradient(160deg, rgba(20,17,12,.95), rgba(5,4,3,.98));
+  color: var(--gold-l);
 }
-.icon-btn .ico { width: 20px; height: 20px; }
+:root[data-theme="light"] .icon-btn {
+  background: #faf7f0;
+  color: #a8861f;
+}
+.icon-btn .ico { width: 18px; height: 18px; }
 #themeBtn .i-moon { display: none; }
 :root[data-theme="light"] #themeBtn .i-sun { display: none; }
 :root[data-theme="light"] #themeBtn .i-moon { display: block; }
 
-.menu-btn { display: none; }
-.menu-btn .bars { width: 18px; height: 12px; position: relative; }
-.menu-btn .bars i { position: absolute; left: 0; width: 100%; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
-.menu-btn .bars i:nth-child(1) { top: 0; }
-.menu-btn .bars i:nth-child(2) { top: 5px; }
-.menu-btn .bars i:nth-child(3) { top: 10px; }
-.menu-btn.open .bars i:nth-child(1) { top: 5px; transform: rotate(45deg); }
-.menu-btn.open .bars i:nth-child(2) { opacity: 0; }
-.menu-btn.open .bars i:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+.lang-btn {
+  min-width: 40px; height: 40px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.25); background: linear-gradient(160deg, rgba(20,17,12,.95), rgba(5,4,3,.98));
+  color: var(--gold-l); font-weight: 900; font-size: 11px; letter-spacing: .12em;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  transition: border-color .2s, color .2s;
+}
+:root[data-theme="light"] .lang-btn {
+  background: #faf7f0;
+  color: #a8861f;
+}
+.lang-btn:hover { border-color: rgba(212,175,55,.65); }
+.lang-btn .ico { width: 14px; height: 14px; }
 
 /* =========================================
-   4. HERO PRINCIPAL
+   4. HERO (Fondo foto_portada.png)
    ========================================= */
-.hero { padding: 48px 0 60px; position: relative; overflow: hidden; }
-.hero::before {
-  content: ""; position: absolute; width: 560px; height: 560px; right: -180px; top: -140px; border-radius: 50%;
-  background: radial-gradient(circle, #d4af372b, transparent 65%); pointer-events: none;
+.hero {
+  position: relative;
+  padding: 56px 0 60px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f4efe6;
 }
-.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; position: relative; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Imagen local para Vercel */
+  background: url('foto_portada.png') center 35%/cover no-repeat;
+  background-color: #0a0908; /* Fallback */
+  filter: grayscale(1) contrast(1.15) brightness(0.55);
+  z-index: -2;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* Resplandor de ojos adaptado */
+    radial-gradient(circle at 45% 35%, rgba(45, 212, 191, 0.25) 0%, transparent 12%),
+    radial-gradient(ellipse at center, transparent 20%, rgba(5,4,3,0.85) 65%, rgba(5,4,3,1) 100%),
+    linear-gradient(180deg, rgba(5,4,3,0.2) 0%, rgba(5,4,3,0.8) 70%, rgba(5,4,3,1) 100%);
+  z-index: -1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
 .hero-grid > * { min-width: 0; }
 
-.hero-label {
-  display: inline-flex; align-items: center; gap: 8px; max-width: 100%;
-  border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; margin-bottom: 20px;
-  font-size: 11px; letter-spacing: .14em; color: var(--gray); background: var(--panel); text-transform: uppercase; font-weight: 600;
+.cine-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.32);
+  background: rgba(5,4,3,.55);
+  color: var(--gold-l);
+  font-size: 10px;
+  letter-spacing: .22em;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
-.hero-label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); flex-shrink: 0; }
+.cine-badge .ico { width: 14px; height: 14px; color: var(--gold-l); }
 
-.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 8.5vw, 60px); line-height: 1.05; letter-spacing: -.02em; }
-.hero h1 em { color: var(--gold); }
-.hero-description { color: var(--gray); font-size: 16.5px; max-width: 520px; margin: 20px 0 26px; line-height: 1.65; }
-.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero h1 { font-weight: 900; font-size: clamp(28px, 6.5vw, 46px); line-height: 1.04; letter-spacing: -.04em; color: #f4efe6; }
+.hero-description { color: #cfc6b6; font-size: 14px; max-width: 500px; margin: 16px 0 22px; line-height: 1.6; }
+.hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .hero-trust {
-  display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 28px;
+  display: flex; flex-wrap: nowrap; gap: 7px; margin-top: 22px;
   overflow-x: auto; overflow-y: hidden; padding: 2px 2px 6px;
   scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
   -webkit-mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
@@ -299,273 +372,641 @@ header {
 }
 .hero-trust::-webkit-scrollbar { display: none; }
 .trust-item {
-  display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 13px; flex: 0 0 auto;
-  font-size: 11.5px; color: var(--gray); border: 1px solid var(--border); border-radius: 999px; background: var(--panel);
-  white-space: nowrap; scroll-snap-align: start;
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 11px; flex: 0 0 auto;
+  font-size: 10.5px; color: #d6cfc3; border: 1px solid rgba(212,175,55,.22); border-radius: 999px;
+  background: rgba(5,4,3,.55); white-space: nowrap; scroll-snap-align: start;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
-.trust-item .ico { width: 14px; height: 14px; color: var(--gold); }
+.trust-item .ico { width: 12px; height: 12px; color: var(--gold-l); }
 
-/* Marco de cine */
-.cine {
-  position: relative; width: 100%; max-width: 420px; margin-inline: auto;
-  aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; isolation: isolate;
-  border: 1px solid var(--gold-d); box-shadow: var(--shadow);
-  background: radial-gradient(circle at 30% 20%, #d4af3744, transparent 55%), linear-gradient(160deg, #2a2112, #0a0908 70%);
+/* PANEL DE VIEWS */
+.views-panel {
+  position: relative;
+  padding: 30px 22px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,.22);
+  background: linear-gradient(160deg, rgba(12,10,7,.86), rgba(5,4,3,.95));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.65), inset 0 0 50px rgba(212,175,55,.04);
+  text-align: center;
+  max-width: 400px;
+  margin-inline: auto;
 }
-.cine img.cine-img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
-  animation: kenburns 16s ease-in-out infinite alternate;
+.views-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.35) 100%);
 }
-@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
-.cine::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, #00000030 0%, #000000bf 100%); pointer-events: none; }
-.cine::after {
-  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .14; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 1.2s steps(4) infinite;
+.views-panel > * { position: relative; z-index: 1; }
+.views-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .22em;
+  color: var(--gold-l);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
-@keyframes grain { 0% { transform: translate(0,0); } 25% { transform: translate(-3%,2%); } 50% { transform: translate(2%,-3%); } 75% { transform: translate(-2%,-1%); } 100% { transform: translate(3%,3%); } }
+.views-big {
+  font-size: clamp(64px, 18vw, 108px);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -.05em;
+  background: linear-gradient(180deg, #fff3b0 0%, #f0d67a 25%, #d4af37 55%, #a8861f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 14px rgba(212,175,55,.25));
+}
+.views-big .unit { font-size: .7em; }
+.views-sub {
+  font-size: 12px;
+  color: #ffffff;
+  margin: 12px 0 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  line-height: 1.4;
+}
+.views-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212,175,55,.14);
+}
+.views-mini > div { display: flex; flex-direction: column; gap: 2px; }
+.views-mini b {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 900;
+  color: var(--gold-l);
+  letter-spacing: -.03em;
+}
+.views-mini small {
+  font-size: 8.5px;
+  letter-spacing: .14em;
+  color: #a79f90;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-.cine-bar {
-  position: absolute; left: 0; right: 0; height: 11%; z-index: 4; background: var(--bar);
-  display: flex; align-items: center; justify-content: space-between; padding: 0 16px;
-  font-size: 9px; letter-spacing: .24em; color: #cfc6b2; font-weight: 700; text-transform: uppercase;
+/* TARJETAS REDES SOCIALES */
+.social-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 26px;
+  max-width: 560px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
-.cine-bar.t { top: 0; }
-.cine-bar.b { bottom: 0; }
-.rec { display: inline-flex; align-items: center; gap: 6px; }
-.rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #ff2a2a; animation: blink 1.4s infinite; }
-@keyframes blink { 50% { opacity: .15; } }
-
-.cine-caption {
-  position: absolute; left: 18px; right: 18px; bottom: calc(11% + 18px); z-index: 3;
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.22), rgba(212,175,55,.06));
+  border: 1px solid rgba(212,175,55,.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  transition: transform .25s, border-color .25s, background .25s;
+  box-shadow: inset 0 0 30px rgba(0,0,0,.15);
 }
-.cine-caption small { display: block; font-size: 10px; letter-spacing: .22em; color: var(--gold-l); font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
-.cine-caption strong { display: block; font-family: var(--serif); font-size: 23px; line-height: 1.15; font-weight: 600; color: #f4efe6; }
+.social-logo { width: 34px; height: 34px; color: #ffffff; }
+.social-card strong {
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  color: #fff;
+  line-height: 1;
+}
+.social-card span {
+  font-size: 9.5px;
+  letter-spacing: .16em;
+  color: var(--gold-l);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+@media(hover:hover) {
+  .social-card:hover { transform: translateY(-2px); border-color: rgba(212,175,55,.7); background: linear-gradient(135deg, rgba(212,175,55,.32), rgba(212,175,55,.1)); }
+}
 
 /* =========================================
-   5. CINTA ANIMADA
+   5. BANNER "PROMOCIÓN ONLINE"
    ========================================= */
-.marquee { overflow: hidden; border-block: 1px solid var(--border); padding: 16px 0; background: var(--panel); }
-.marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; will-change: transform; }
-.marquee-track div { display: flex; gap: 26px; padding-right: 26px; font-size: 12px; font-weight: 700; letter-spacing: .24em; white-space: nowrap; color: var(--gray); text-transform: uppercase; }
-.marquee-track b { color: var(--gold); }
-.marquee-track .sp-badge { font-family: var(--spotify); font-weight: 900; font-size: 0.85em; color: var(--gold); }
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  /* Imagen de mujer rubia en la playa */
+  background: url('https://images.unsplash.com/photo-1542314831-c6a4d1421c04?w=1600&q=80') center 35%/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+.banner-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at center, rgba(5,4,3,0.1) 0%, rgba(5,4,3,0.65) 70%, rgba(5,4,3,0.95) 100%),
+    linear-gradient(180deg, rgba(5,4,3,0.1) 0%, rgba(5,4,3,0.7) 100%);
+  z-index: 1;
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+/* Título principal */
+.banner-tag {
+  display: block;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: .15em;
+  color: var(--gold);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  line-height: 1.1;
+}
+/* Subtítulo delicado y elegante */
+.banner-subtitle {
+  display: block;
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: #c9c2b8; /* Gris claro elegante */
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+@media (max-width: 720px) {
+  .banner-section { height: 320px; }
+  .banner-tag { font-size: clamp(24px, 6vw, 32px); }
+  .banner-subtitle { font-size: 11px; }
+}
+
+/* =========================================
+   6. CINTA ANIMADA
+   ========================================= */
+.marquee { overflow: hidden; border-block: 1px solid rgba(212,175,55,.14); padding: 12px 0; background: var(--panel); }
+.marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; will-change: transform; }
+.marquee-track div { display: flex; gap: 22px; padding-right: 22px; font-size: 11px; font-weight: 800; letter-spacing: .22em; white-space: nowrap; color: var(--gray); text-transform: uppercase; }
+.marquee-track b { color: var(--gold-l); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* =========================================
-   6. DOS CAMINOS
+   7. 10 SECTORES
    ========================================= */
-.paths-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.path { padding: 34px 28px; display: flex; flex-direction: column; gap: 14px; position: relative; min-height: 380px; }
-.path.featured { border-color: var(--gold-d); }
-.path h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1.1; }
-.path p { color: #d6cfc3; font-size: 14.5px; }
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.sector {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  box-shadow: inset 0 0 50px rgba(0,0,0,.55), 0 10px 24px rgba(0,0,0,.45);
+  transition: transform .3s, box-shadow .3s;
+}
+.sector::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,4,3,.15) 0%, rgba(5,4,3,.92) 100%);
+  z-index: 1;
+}
+.sector::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.4) 100%);
+}
+.sector > * { position: relative; z-index: 2; }
+.sector-num {
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: var(--gold-l);
+  font-weight: 800;
+  margin-bottom: 5px;
+  display: block;
+}
+.sector h3 {
+  font-size: 12.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 5px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.sector p {
+  font-size: 10.5px;
+  color: #cfc6b6;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+@media(hover: hover) {
+  .sector:hover { transform: translateY(-3px); box-shadow: inset 0 0 50px rgba(0,0,0,.55), 0 14px 32px rgba(0,0,0,.6); }
+}
+@media(max-width: 960px) {
+  .sectors-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media(max-width: 640px) {
+  .sectors-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .sector { padding: 12px 10px; }
+  .sector h3 { font-size: 11.5px; }
+  .sector p { font-size: 10px; }
+}
+
+/* =========================================
+   8. DOS CAMINOS
+   ========================================= */
+.paths-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.path { padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; position: relative; min-height: 320px; }
+.path h3 { font-weight: 900; font-size: 20px; line-height: 1.06; color: #fff; }
+:root[data-theme="light"] .path h3 { color: #1a1610; }
+.path p { color: #d6cfc3; font-size: 12.5px; }
 :root[data-theme="light"] .path p { color: #3a3225; }
-.path ul { list-style: none; display: grid; gap: 12px; flex: 1; margin: 8px 0 14px; }
-.path li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink); font-weight: 500; }
-.path li .ico { width: 18px; height: 18px; color: var(--gold); margin-top: 3px; }
+.path ul { list-style: none; display: grid; gap: 10px; flex: 1; margin: 6px 0 12px; }
+.path li { display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; color: #f4efe6; font-weight: 500; }
+:root[data-theme="light"] .path li { color: #1a1610; }
+.path li .ico { width: 16px; height: 16px; color: var(--gold-l); margin-top: 3px; }
 .path .btn { width: 100%; }
 
 /* =========================================
-   7. SERVICIOS (CON FONDOS EN CADA TARJETA)
+   9. SERVICIOS
    ========================================= */
-.services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .service {
-  padding: 28px 22px;
-  min-height: 240px;
+  padding: 22px 18px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.service .icon-circle { margin-bottom: auto; margin-bottom: 20px; }
-.service h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+.service .icon-circle { margin-bottom: 16px; }
+.service h3 { font-weight: 900; font-size: 15px; margin-bottom: 7px; color: #fff; line-height: 1.12; }
 :root[data-theme="light"] .service h3 { color: #1a1610; }
-.service p { font-size: 13.8px; color: #d1c8b8; line-height: 1.5; }
+.service p { font-size: 12px; color: #d1c8b8; line-height: 1.5; }
 :root[data-theme="light"] .service p { color: #4f4637; font-weight: 500; }
 
 /* =========================================
-   8. LOOKBOOK (scroll horizontal)
+   10. LOOKBOOK
    ========================================= */
 .lookbook {
-  display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; padding: 4px 2px 14px;
+  display: flex; gap: 12px; overflow-x: auto; overflow-y: hidden; padding: 4px 2px 12px;
   scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .lookbook::-webkit-scrollbar { display: none; }
 .look {
-  position: relative; flex: 0 0 auto; width: 220px; aspect-ratio: 9 / 14; border-radius: 16px; overflow: hidden; isolation: isolate;
-  border: 1px solid var(--border); scroll-snap-align: start; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px;
-  background: linear-gradient(160deg, #2a2112, #0a0908 75%);
+  position: relative; flex: 0 0 auto; width: 190px; aspect-ratio: 9 / 14; border-radius: 14px; overflow: hidden; isolation: isolate;
+  border: 0; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px;
+  background: linear-gradient(160deg, #1a1710, #050403 75%);
+  box-shadow: inset 0 0 50px rgba(0,0,0,.6), 0 14px 30px rgba(0,0,0,.5);
 }
 .look img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .6s; }
-.look::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 100%); pointer-events: none; }
+.look::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.55) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(5,4,3,.94) 100%);
+  pointer-events: none;
+}
 .look > :not(img) { position: relative; z-index: 2; }
-.look small { font-size: 10px; letter-spacing: .2em; color: var(--gold-l); font-weight: 700; text-transform: uppercase; }
-.look strong { font-family: var(--serif); font-size: 19px; font-weight: 600; color: #f4efe6; line-height: 1.15; }
+.look small { font-size: 9px; letter-spacing: .18em; color: var(--gold-l); font-weight: 800; text-transform: uppercase; }
+.look strong { font-size: 15px; font-weight: 900; color: #f4efe6; line-height: 1.12; text-transform: uppercase; letter-spacing: -0.02em; }
 @media(hover: hover) { .look:hover img { transform: scale(1.08); } }
-.look-note { font-size: 11.5px; color: var(--gray); margin-top: 10px; }
+.look-note { font-size: 10.5px; color: var(--gray); margin-top: 8px; }
 
 /* =========================================
-   9. PROCESO
+   11. GRÁFICO
    ========================================= */
-.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.process { padding: 24px 20px; }
-.process-number { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .16em; }
-.process .icon-circle { margin: 16px 0 14px; }
-.process h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; margin-bottom: 6px; }
-.process p { font-size: 13.5px; color: var(--gray); }
+.growth-section { position: relative; }
+.growth-card {
+  position: relative;
+  padding: 24px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(212,175,55,.18);
+  background: #050403;
+  box-shadow: 0 20px 50px rgba(0,0,0,.7), inset 0 0 60px rgba(212,175,55,.05);
+  isolation: isolate;
+  overflow: hidden;
+  transition: background .3s, border-color .3s;
+}
+:root[data-theme="light"] .growth-card {
+  background: #faf7f0;
+  border-color: rgba(168,134,31,.22);
+  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
+.growth-card::before {
+  content: ""; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
+  background: radial-gradient(circle at 15% 10%, rgba(212,175,55,.08), transparent 50%),
+              radial-gradient(circle at 90% 95%, rgba(240,214,122,.05), transparent 50%);
+}
+.growth-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.35) 100%);
+}
+.growth-head { text-align: center; margin-bottom: 18px; position: relative; z-index: 2; }
+.growth-head h2 { font-weight: 900; font-size: clamp(18px, 4vw, 26px); color: #f4efe6; letter-spacing: -.03em; line-height: 1.1; }
+:root[data-theme="light"] .growth-head h2 { color: #1a1610; }
+.growth-head p { color: #8f8779; font-size: 12px; max-width: 460px; margin: 8px auto 0; line-height: 1.5; }
+:root[data-theme="light"] .growth-head p { color: #6f6657; }
+.growth-chart { position: relative; z-index: 2; width: 100%; max-width: 620px; margin: 0 auto; }
+.growth-chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.growth-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-top: 16px; position: relative; z-index: 2;
+}
+.growth-stat {
+  text-align: center; padding: 10px 6px; border-radius: 12px;
+  background: rgba(212,175,55,.05); border: 1px solid rgba(212,175,55,.16);
+}
+:root[data-theme="light"] .growth-stat {
+  background: rgba(168,134,31,.06); border-color: rgba(168,134,31,.18);
+}
+.growth-stat b { display: block; font-size: clamp(15px, 3.2vw, 20px); font-weight: 900; color: var(--gold-l); letter-spacing: -.03em; }
+:root[data-theme="light"] .growth-stat b { color: #a8861f; }
+.growth-stat small { display: block; font-size: 9px; letter-spacing: .1em; color: #8f8779; text-transform: uppercase; font-weight: 700; margin-top: 3px; }
+:root[data-theme="light"] .growth-stat small { color: #6f6657; }
 
 /* =========================================
-   10. FAQ
+   12. PROCESO
    ========================================= */
-.faq-layout { display: grid; grid-template-columns: 280px 1fr; gap: 34px; }
+.process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.process { padding: 20px 16px; border: 1px solid rgba(212,175,55,.15); }
+.process-number { color: var(--gold-l); font-size: 10px; font-weight: 900; letter-spacing: .14em; }
+:root[data-theme="light"] .process-number { color: #a8861f; }
+.process .icon-circle { margin: 12px 0 12px; width: 40px; height: 40px; }
+.process h3 { font-weight: 900; font-size: 13px; margin-bottom: 5px; }
+.process p { font-size: 11.5px; color: var(--gray); line-height: 1.45; }
+
+/* =========================================
+   13. FAQ
+   ========================================= */
+.faq-layout { display: grid; grid-template-columns: 240px 1fr; gap: 28px; }
 .faq-layout > * { min-width: 0; }
-.faq-title h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 7vw, 38px); line-height: 1.08; margin: 12px 0; }
-.faq-title p { color: var(--gray); }
-.faq-list { display: grid; gap: 10px; align-content: start; }
-.faq-list details { border: 1px solid var(--border); border-radius: 16px; background: var(--panel); padding: 0 18px; transition: border-color .2s; }
-.faq-list details[open] { border-color: var(--gold-d); }
-.faq-list summary { list-style: none; cursor: pointer; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 15px; font-weight: 600; }
+.faq-title h2 { font-weight: 900; font-size: clamp(20px, 5vw, 28px); line-height: 1.06; margin: 10px 0; }
+.faq-title p { color: var(--gray); font-size: 12.5px; }
+.faq-list { display: grid; gap: 8px; align-content: start; }
+.faq-list details { border: 1px solid rgba(212,175,55,.14); border-radius: 14px; background: var(--panel); padding: 0 16px; transition: border-color .2s; }
+.faq-list details[open] { border-color: rgba(212,175,55,.5); }
+.faq-list summary { list-style: none; cursor: pointer; min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 800; }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary::after {
-  content: ""; width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--gold-d);
-  background: linear-gradient(var(--gold), var(--gold)) center/10px 1.6px no-repeat, linear-gradient(var(--gold), var(--gold)) center/1.6px 10px no-repeat;
+  content: ""; width: 20px; height: 20px; flex-shrink: 0; border-radius: 50%; border: 1px solid rgba(212,175,55,.4);
+  background: linear-gradient(var(--gold-l), var(--gold-l)) center/9px 1.5px no-repeat, linear-gradient(var(--gold-l), var(--gold-l)) center/1.5px 9px no-repeat;
   transition: transform .25s;
 }
+:root[data-theme="light"] .faq-list summary::after {
+  background: linear-gradient(#a8861f, #a8861f) center/9px 1.5px no-repeat, linear-gradient(#a8861f, #a8861f) center/1.5px 9px no-repeat;
+  border-color: #a8861f;
+}
 .faq-list details[open] summary::after { transform: rotate(45deg); }
-.faq-list details p { font-size: 14px; color: var(--gray); padding: 0 0 18px; max-width: 640px; }
+.faq-list details p { font-size: 12px; color: var(--gray); padding: 0 0 15px; max-width: 600px; line-height: 1.5; }
 
 /* =========================================
-   11. CONTACTO
+   14. CONTACTO
    ========================================= */
-.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 36px; align-items: start; }
+.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 30px; align-items: start; }
 .contact-layout > * { min-width: 0; }
-.contact-title { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 8.5vw, 54px); line-height: 1.04; letter-spacing: -.02em; margin: 14px 0; }
-.contact-description { color: var(--gray); max-width: 440px; font-size: 16px; line-height: 1.6; }
+.contact-title { font-weight: 900; font-size: clamp(24px, 6vw, 38px); line-height: 1.04; letter-spacing: -.04em; margin: 12px 0; }
+.contact-description { color: var(--gray); max-width: 420px; font-size: 13px; line-height: 1.55; }
 
-.form-card { padding: 22px; }
-.tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border: 1px solid var(--border); border-radius: 999px; background: var(--field); margin-bottom: 20px; }
-.tab { min-height: 46px; border-radius: 999px; font-weight: 700; font-size: 13px; color: var(--gray); letter-spacing: .02em; padding: 0 8px; transition: background .25s, color .25s; }
-.tab[aria-selected="true"] { background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d)); color: var(--on-gold); }
+.form-card { padding: 18px; border: 1px solid rgba(212,175,55,.2); }
+:root[data-theme="light"] .form-card { border-color: rgba(168,134,31,.2); }
+.tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 4px; border: 1px solid rgba(212,175,55,.18); border-radius: 999px; background: var(--field); margin-bottom: 16px; }
+.tab { min-height: 38px; border-radius: 999px; font-weight: 800; font-size: 11.5px; color: var(--gray); letter-spacing: -0.02em; padding: 0 6px; transition: background .25s, color .25s; }
+.tab[aria-selected="true"] { background: linear-gradient(135deg, #f0d67a 0%, #d4af37 55%, #a8861f 100%); color: var(--on-gold); }
 
-.contact-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-content: start; }
+.contact-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 9px; align-content: start; }
 .contact-form[hidden] { display: none; }
 .field { position: relative; min-width: 0; }
 .field.full { grid-column: 1 / -1; }
 
 .contact-form input:not([type="checkbox"]), .contact-form select, .contact-form textarea {
-  width: 100%; background: var(--field); color: var(--ink); border: 1px solid var(--border); border-radius: 14px;
-  padding: 0 16px; min-height: 52px; font-size: 15.5px; outline: none; transition: border-color .2s, box-shadow .2s;
+  width: 100%; background: var(--field); color: var(--ink); border: 1px solid rgba(212,175,55,.16); border-radius: 11px;
+  padding: 0 12px; min-height: 42px; font-size: 13px; outline: none; transition: border-color .2s, box-shadow .2s;
 }
-.contact-form textarea { padding: 14px 16px; min-height: 110px; resize: vertical; }
+:root[data-theme="light"] .contact-form input:not([type="checkbox"]), 
+:root[data-theme="light"] .contact-form select, 
+:root[data-theme="light"] .contact-form textarea {
+  border-color: rgba(168,134,31,.2);
+}
+.contact-form textarea { padding: 10px 12px; min-height: 80px; resize: vertical; }
 .contact-form ::placeholder { color: var(--gray); opacity: .8; }
 .contact-form input:not([type="checkbox"]):focus, .contact-form select:focus, .contact-form textarea:focus {
-  border-color: var(--gold); box-shadow: 0 0 0 3px #d4af3724;
+  border-color: rgba(212,175,55,.65); box-shadow: 0 0 0 2px rgba(212,175,55,.14);
 }
 
-.check { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: var(--gray); line-height: 1.45; cursor: pointer; }
+.check { display: flex; gap: 9px; align-items: flex-start; font-size: 11.5px; color: var(--gray); line-height: 1.4; cursor: pointer; }
 .check input[type="checkbox"] {
-  -webkit-appearance: checkbox; appearance: auto; width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px;
+  -webkit-appearance: checkbox; appearance: auto; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
   accent-color: var(--gold); cursor: pointer;
 }
 
 .dd { position: relative; }
 .dd.open { z-index: 60; }
 .dd-btn {
-  width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 0 16px; background: var(--field); border: 1px solid var(--border); border-radius: 14px;
-  font-size: 15.5px; color: var(--gray); text-align: left; outline: none; transition: border-color .2s, box-shadow .2s, color .2s;
+  width: 100%; min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 0 12px; background: var(--field); border: 1px solid rgba(212,175,55,.16); border-radius: 11px;
+  font-size: 13px; color: var(--gray); text-align: left; outline: none; transition: border-color .2s, box-shadow .2s, color .2s;
 }
+:root[data-theme="light"] .dd-btn { border-color: rgba(168,134,31,.2); }
 .dd-btn.filled { color: var(--ink); }
 .dd-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.dd-btn svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: transform .35s cubic-bezier(.2,.9,.3,1); }
-.dd.open .dd-btn, .dd-btn:focus-visible { border-color: var(--gold); box-shadow: 0 0 0 3px #d4af3724; }
+.dd-btn svg { width: 15px; height: 15px; fill: none; stroke: var(--gold-l); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: transform .3s; }
+:root[data-theme="light"] .dd-btn svg { stroke: #a8861f; }
+.dd.open .dd-btn, .dd-btn:focus-visible { border-color: rgba(212,175,55,.65); box-shadow: 0 0 0 2px rgba(212,175,55,.14); }
 .dd.open .dd-btn svg { transform: rotate(180deg); }
-.dd.error .dd-btn { border-color: #e5484d; animation: shake .4s; }
-@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.dd.error .dd-btn { border-color: #e5484d; animation: shake .35s; }
+@keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
 
 .dd-list {
-  position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 50; list-style: none;
-  max-height: 252px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
-  padding: 6px; background: var(--panel2); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow);
-  opacity: 0; visibility: hidden; transform: translateY(-8px) scale(.96); transform-origin: top center;
-  transition: opacity .2s ease, transform .32s cubic-bezier(.2,.9,.3,1.1), visibility .2s;
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50; list-style: none;
+  max-height: 220px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none;
+  padding: 5px; background: var(--panel2); border: 1px solid rgba(212,175,55,.25); border-radius: 14px; box-shadow: var(--shadow);
+  opacity: 0; visibility: hidden; transform: translateY(-6px) scale(.97); transform-origin: top center;
+  transition: opacity .18s ease, transform .24s ease, visibility .18s;
 }
+:root[data-theme="light"] .dd-list { border-color: rgba(168,134,31,.25); }
 .dd-list::-webkit-scrollbar { display: none; }
-.dd.up .dd-list { top: auto; bottom: calc(100% + 8px); transform: translateY(8px) scale(.96); transform-origin: bottom center; }
+.dd.up .dd-list { top: auto; bottom: calc(100% + 6px); transform: translateY(6px) scale(.97); transform-origin: bottom center; }
 .dd.open .dd-list { opacity: 1; visibility: visible; transform: none; }
-.dd-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 46px; padding: 0 14px; border-radius: 12px; font-size: 14.5px; color: var(--ink); cursor: pointer; transition: background .15s; }
-.dd-list li.active { background: color-mix(in srgb, var(--gold) 16%, transparent); }
-.dd-list li.sel { font-weight: 600; }
-.dd-list li.sel::after { content: ""; width: 6px; height: 12px; border: solid var(--gold); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translateY(-2px); flex-shrink: 0; }
+.dd-list li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 38px; padding: 0 11px; border-radius: 10px; font-size: 12.5px; color: var(--ink); cursor: pointer; transition: background .15s; }
+.dd-list li.active { background: rgba(212,175,55,.12); }
+.dd-list li.sel { font-weight: 700; }
+.dd-list li.sel::after { content: ""; width: 5px; height: 10px; border: solid var(--gold-l); border-width: 0 2px 2px 0; transform: rotate(45deg) translateY(-2px); flex-shrink: 0; }
+:root[data-theme="light"] .dd-list li.sel::after { border-color: #a8861f; }
 
 .contact-form button[type="submit"] { width: 100%; }
-.form-note { grid-column: 1 / -1; color: var(--gray); font-size: 12px; text-align: center; }
+.form-note { grid-column: 1 / -1; color: var(--gray); font-size: 10.5px; text-align: center; }
 
 /* =========================================
-   12. FOOTER Y WHATSAPP
+   15. COMUNIDAD / FRASE MOTIVACIONAL
    ========================================= */
-footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(--border); }
-.footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.community {
+  position: relative; overflow: hidden;
+  padding: 56px 0;
+}
+.community::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(212,175,55,.10), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(240,214,122,.05), transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(212,175,55,.05), transparent 50%);
+}
+.community-inner {
+  position: relative; z-index: 1;
+  max-width: 760px; margin-inline: auto; text-align: center;
+  padding: 50px 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(212,175,55,.25);
+  background: #050403 !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.8), inset 0 0 50px rgba(212,175,55,.05);
+}
+.community-inner .heart-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(212,175,55,.1);
+  border: 1px solid rgba(212,175,55,.3);
+  color: var(--gold-l);
+  margin-bottom: 20px;
+}
+.community-inner .heart-icon .ico { width: 24px; height: 24px; }
+.community-inner h2 { 
+  font-weight: 900; 
+  font-size: clamp(22px, 5vw, 32px); 
+  line-height: 1.1; 
+  letter-spacing: -.03em; 
+  margin-bottom: 16px; 
+  color: var(--gray) !important;
+}
+.community-inner h2 strong {
+  color: var(--gold) !important;
+  font-weight: 900;
+}
+.community-inner p { 
+  color: var(--gray) !important; 
+  font-size: 15px; 
+  line-height: 1.6; 
+  margin-bottom: 0; 
+  font-weight: 500;
+}
+.community-inner p strong { 
+  color: var(--gold) !important; 
+  font-weight: 700; 
+}
+
+/* =========================================
+   16. FOOTER
+   ========================================= */
+footer { padding: 26px 0 calc(26px + var(--safe-b)); border-top: 1px solid rgba(212,175,55,.14); }
+.footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer-logo {
-  display: inline-flex; align-items: baseline; gap: .35em; white-space: nowrap; font-size: 20px; line-height: 1;
+  display: inline-flex; align-items: baseline; gap: .28em; white-space: nowrap; font-size: 15px; line-height: 1;
+  letter-spacing: -0.04em;
 }
-.footer-logo .l1 { font-family: var(--serif); font-weight: 700; text-transform: uppercase; color: var(--ink); }
+.footer-logo .l1 {
+  color: #fff;
+  font-weight: 300;
+  font-style: italic;
+  display: inline-block;
+  transform: skewX(-9deg);
+}
 .footer-logo .l2 {
-  font-family: var(--spotify); font-weight: 900; font-size: 0.75em; letter-spacing: -0.03em;
-  color: var(--gold); text-transform: uppercase; background: #1e1b12; padding: 3px 7px; border-radius: 6px; border: 1px solid var(--gold-d);
+  font-weight: 900;
+  font-style: normal;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
 }
-.footer-links { display: flex; gap: 20px; font-size: 13px; color: var(--gray); }
-.footer-copy { font-size: 11px; color: var(--gray); }
-
-.wa {
-  position: fixed; right: 18px; bottom: calc(18px + var(--safe-b)); z-index: 90; width: 56px; height: 56px;
-  display: grid; place-items: center; border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-l), var(--gold) 55%, var(--gold-d)); color: var(--on-gold);
-  box-shadow: 0 8px 28px #0009, 0 0 0 6px #d4af3722; transition: transform .2s;
-}
-.wa:active { transform: scale(.92); }
-.wa .ico { width: 26px; height: 26px; }
+:root[data-theme="light"] .footer-logo .l1,
+:root[data-theme="light"] .footer-logo .l2 { color: #1a1610; -webkit-text-fill-color: #1a1610; }
+.footer-links { display: flex; gap: 16px; font-size: 11.5px; color: var(--gray); }
+.footer-links a:hover { color: var(--gold-l); }
+.footer-copy { font-size: 9.5px; color: var(--gray); }
 
 /* =========================================
-   13. ANIMACIONES Y RESPONSIVE
+   17. ANIMACIONES Y RESPONSIVE
    ========================================= */
-.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
 .js .reveal.visible { opacity: 1; transform: none; }
 
 @media(max-width: 960px) {
   .faq-layout, .contact-layout { grid-template-columns: minmax(0, 1fr); }
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .paths-grid { grid-template-columns: minmax(0, 1fr); max-width: 600px; margin-inline: auto; }
+  .paths-grid { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin-inline: auto; }
 }
 
 @media(max-width: 720px) {
-  section { padding: 52px 0; }
-  .menu-btn { display: grid; }
-  .nav-links {
-    position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg);
-    flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 14px 20px calc(24px + var(--safe-b));
-    font-size: 17px; overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: .25s;
-  }
-  .nav-links.open { opacity: 1; visibility: visible; transform: none; }
-  .nav-links a:not(.btn) { padding: 18px 4px; border-bottom: 1px solid var(--border); font-weight: 600; color: var(--ink); }
-  .nav-links .btn { margin-top: 16px; min-height: 54px; font-size: 15px; }
-  .nav-links .btn + .btn { margin-top: 10px; }
+  section { padding: 40px 0; }
+  
+  /* Ocultar enlaces de navegación en móvil ya que no hay menú hamburguesa */
+  .nav-links { display: none; }
+  
   .actions { margin-left: auto; }
-  .hero { padding: 32px 0 44px; }
-  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .hero { padding: 36px 0 44px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .hero-buttons .btn { flex: 1 1 100%; }
-  .cine { max-width: 360px; }
+  .views-panel { max-width: 100%; padding: 26px 18px 20px; }
+  .views-big { font-size: clamp(60px, 20vw, 96px); }
+  .social-cards { max-width: 100%; gap: 8px; margin-top: 20px; }
+  .social-card { padding: 16px 8px; gap: 6px; }
+  .social-logo { width: 26px; height: 26px; }
+  .social-card strong { font-size: 11px; }
+  .social-card span { font-size: 8.5px; letter-spacing: .12em; }
+  .banner-section { height: 300px; }
+  .banner-tag { font-size: clamp(22px, 6vw, 32px); }
   .services-grid { grid-template-columns: minmax(0, 1fr); }
   .process-grid { grid-template-columns: minmax(0, 1fr); }
-  .process { display: grid; grid-template-columns: 52px minmax(0, 1fr); column-gap: 16px; align-items: start; }
+  .process { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 12px; align-items: start; }
   .process-number { grid-column: 2; grid-row: 1; }
-  .process .icon-circle { grid-column: 1; grid-row: 1 / 4; margin: 0; }
-  .process h3 { grid-column: 2; margin: 6px 0 4px; }
+  .process .icon-circle { grid-column: 1; grid-row: 1 / 4; margin: 0; width: 40px; height: 40px; }
+  .process h3 { grid-column: 2; margin: 4px 0 3px; }
   .process p { grid-column: 2; }
   .contact-form { grid-template-columns: minmax(0, 1fr); }
-  .look { width: 175px; }
+  .look { width: 155px; }
   .footer-grid { flex-direction: column; text-align: center; justify-content: center; }
-  .footer-links { justify-content: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; }
+  .growth-stats { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .growth-stat small { font-size: 8px; letter-spacing: .06em; }
+  .community-inner { padding: 30px 20px; }
 }
 
 @media(prefers-reduced-motion: reduce) {
@@ -592,12 +1033,12 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
   <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.8-4.5A8 8 0 1 1 21 11.5z"/></symbol>
   <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M5 17v-5h4v5M11 17V7h4v10M17 17V3h4v14"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
   <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
   <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
-  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5a8.5 8.5 0 1 1 15.5-4.5z"/><path d="M9 8c0 4 3 7 7 7l1-2-3-1-1 1-3-3 1-1-1-2z"/></symbol>
 </svg>
 
-<!-- HEADER -->
+<!-- HEADER (Sin menú hamburguesa) -->
 <header>
   <div class="container nav">
     <a href="#inicio" class="logo" aria-label="Studio +Viral">
@@ -605,22 +1046,23 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
       <span class="l2">+Viral</span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#inicio">Inicio</a>
-      <a href="#caminos">Acceso</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#lookbook">Estilos & Bailarinas</a>
-      <a href="#proceso">Estrategia</a>
-      <a href="#faq">FAQ</a>
-      <a href="#servicio" class="btn btn-gold">Elevar mi marca</a>
-      <a href="#inscripcion" class="btn">Ser talento</a>
+      <a href="#inicio" data-es="Inicio" data-en="Home"></a>
+      <a href="#sectores" data-es="Sectores" data-en="Sectors"></a>
+      <a href="#crecimiento" data-es="Crecimiento" data-en="Growth"></a>
+      <a href="#caminos" data-es="Acceso" data-en="Access"></a>
+      <a href="#servicios" data-es="Servicios" data-en="Services"></a>
+      <a href="#lookbook" data-es="Modelos & Influencers" data-en="Models & Influencers"></a>
+      <a href="#faq" data-es="FAQ" data-en="FAQ"></a>
+      <a href="#contacto" class="btn btn-gold" data-es="Contactar" data-en="Contact"></a>
     </nav>
     <div class="actions">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Cambiar idioma / Change language">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langLabel">EN</span>
+      </button>
       <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar tema">
         <svg class="ico i-sun"><use href="#i-sun"/></svg>
         <svg class="ico i-moon"><use href="#i-moon"/></svg>
-      </button>
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">
-        <span class="bars"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
@@ -628,190 +1070,346 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
 
 <main>
 
-<!-- HERO PRINCIPAL -->
+<!-- HERO (Fondo foto_portada.png) -->
 <section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div class="reveal">
-      <div class="hero-label">Marketing de Influencers · Modelos · Bailarinas</div>
-      <h1>Ayudamos a darle <em>prestigio</em> a tu marca con marketing y distribución viral<span class="spotify-tag gold">.</span></h1>
-      <p class="hero-description">
-        Las mujeres llaman la atención por naturaleza. Con el poder de nuestro selecto equipo de modelos de alta gama, bailarinas profesionales, influencers y creadoras de contenido magnético, generamos un alcance mundial en TikTok, Instagram y YouTube. Convertimos miradas en deseo, prestigio y ventas exponenciales para tu negocio.
-      </p>
-      <div class="hero-buttons">
-        <a href="#servicio" class="btn btn-gold">Escalar mi marca <svg class="ico"><use href="#i-arrow"/></svg></a>
-        <a href="#inscripcion" class="btn">Unirme al elenco</a>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="cine-badge">
+          <svg class="ico"><use href="#i-film"/></svg>
+          <span data-es="CÁMARA · LUZ · ACCIÓN" data-en="CAMERA · LIGHT · ACTION"></span>
+        </div>
+        <h1 data-es-html='EL PODER DE UNA IMAGEN, EL IMPACTO DE <em class="metal-gold">UNA MARCA</em>'
+            data-en-html='THE POWER OF AN IMAGE, THE IMPACT OF <em class="metal-gold">A BRAND</em>'></h1>
+        <p class="hero-description"
+           data-es="Las mujeres llaman la atención por naturaleza. Con el poder de nuestro selecto equipo de modelos de alta gama, influencers y creadoras de contenido magnético, generamos un alcance mundial en TikTok, Instagram y YouTube. Convertimos miradas en deseo, prestigio y ventas exponenciales para su negocio. (Y si busca un plus, sumamos bailarinas profesionales)."
+           data-en="Women naturally capture attention. With the power of our select team of high-end models, influencers and magnetic content creators, we generate worldwide reach on TikTok, Instagram and YouTube. We turn attention into desire, prestige and exponential sales for your business. (And if you want a bonus, we add professional dancers)."></p>
+        <div class="hero-buttons">
+          <a href="#servicios" class="btn btn-gold"><span data-es="Descubrir servicios" data-en="Discover services"></span> <svg class="ico"><use href="#i-arrow"/></svg></a>
+          <a href="#crecimiento" class="btn" data-es="Ver crecimiento" data-en="See growth"></a>
+        </div>
+        <div class="hero-trust" aria-label="Ventajas / Advantages">
+          <div class="trust-item"><svg class="ico"><use href="#i-globe"/></svg><span data-es="Alcance global" data-en="Global reach"></span></div>
+          <div class="trust-item"><svg class="ico"><use href="#i-users"/></svg><span data-es="Modelos & Influencers" data-en="Models & Influencers"></span></div>
+          <div class="trust-item"><svg class="ico"><use href="#i-star"/></svg><span data-es="Prestigio de marca" data-en="Brand prestige"></span></div>
+          <div class="trust-item"><svg class="ico"><use href="#i-film"/></svg><span data-es="Estética de cine" data-en="Cinematic aesthetics"></span></div>
+          <div class="trust-item"><svg class="ico"><use href="#i-message"/></svg><span data-es="Contacto WhatsApp" data-en="WhatsApp contact"></span></div>
+        </div>
       </div>
-      <div class="hero-trust" aria-label="Ventajas">
-        <div class="trust-item"><svg class="ico"><use href="#i-globe"/></svg> Alcance e impacto global</div>
-        <div class="trust-item"><svg class="ico"><use href="#i-music"/></svg> Bailarinas & tendencias TikTok</div>
-        <div class="trust-item"><svg class="ico"><use href="#i-star"/></svg> Modelos con imagen de prestigio</div>
-        <div class="trust-item"><svg class="ico"><use href="#i-film"/></svg> Estética cinematográfica</div>
-        <div class="trust-item"><svg class="ico"><use href="#i-message"/></svg> Contacto directo WhatsApp</div>
+
+      <div class="reveal">
+        <div class="views-panel">
+          <span class="views-label" data-es="Alcance en pocas semanas" data-en="Reach in a few weeks"></span>
+          <div class="views-big">+1<span class="unit">M</span></div>
+          <p class="views-sub" data-es-html="USTED PUEDE CONSEGUIR SU PRIMER <span style='color:var(--gold); font-weight:900;'>MILLON DE VIWS</span>" data-en-html="YOU CAN GET YOUR FIRST <span style='color:var(--gold); font-weight:900;'>MILLION VIWS</span>"></p>
+          <div class="views-mini">
+            <div><b>+300%</b><small data-es="Ventas" data-en="Sales"></small></div>
+            <div><b>1</b><small data-es="Mes" data-en="Month"></small></div>
+            <div><b>3</b><small data-es="Redes" data-en="Networks"></small></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="reveal" aria-hidden="true">
-      <div class="cine">
-        <!-- Imagen de modelo/bailarina en movimiento y producción de alto impacto -->
-        <img class="cine-img" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=900&q=75&auto=format&fit=crop" alt="Bailarina y modelo profesional en estudio" loading="eager" decoding="async">
-        <div class="cine-bar t"><span class="rec">REC</span><span>Studio <span class="spotify-tag">+Viral</span></span></div>
-        <div class="cine-caption">
-          <small>Campaña Viral · Visual Magnet</small>
-          <strong>La belleza en movimiento domina las miradas.</strong>
-        </div>
-        <div class="cine-bar b"><span>2.39 : 1</span><span>4K · 60 fps</span></div>
-      </div>
+    <!-- 3 TARJETAS REDES SOCIALES -->
+    <div class="social-cards reveal" aria-label="Redes / Networks">
+      <a class="social-card" href="#" aria-label="TikTok">
+        <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+        </svg>
+        <strong>TikTok</strong>
+        <span data-es="Viralidad" data-en="Virality"></span>
+      </a>
+      <a class="social-card" href="#" aria-label="Instagram">
+        <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        <strong>Instagram</strong>
+        <span data-es="Estética" data-en="Aesthetic"></span>
+      </a>
+      <a class="social-card" href="#" aria-label="YouTube">
+        <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+        </svg>
+        <strong>YouTube</strong>
+        <span data-es="Alcance" data-en="Reach"></span>
+      </a>
     </div>
+  </div>
+</section>
+
+<!-- BANNER "PROMOCIÓN ONLINE" -->
+<section class="banner-section reveal">
+  <div class="banner-content">
+    <h2 class="banner-tag" data-es="PROMOCIÓN ONLINE" data-en="ONLINE PROMOTION"></h2>
+    <p class="banner-subtitle" data-es="Alcance global" data-en="Global reach"></p>
   </div>
 </section>
 
 <!-- CINTA ANIMADA -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
-    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
-    <div><b>STUDIO <span class="sp-badge">+VIRAL</span></b> ✦ MODELOS DE ÉLITE ✦ BAILARINAS PROFESIONALES ✦ MARKETING DE INFLUENCERS ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+    <div><b>STUDIO +VIRAL</b> ✦ MODELOS DE ÉLITE ✦ INFLUENCERS ✦ CREADORAS DE CONTENIDO ✦ MARKETING DIGITAL ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+    <div><b>STUDIO +VIRAL</b> ✦ MODELOS DE ÉLITE ✦ INFLUENCERS ✦ CREADORAS DE CONTENIDO ✦ MARKETING DIGITAL ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
+    <div><b>STUDIO +VIRAL</b> ✦ MODELOS DE ÉLITE ✦ INFLUENCERS ✦ CREADORAS DE CONTENIDO ✦ MARKETING DIGITAL ✦ DISTRIBUCIÓN MUNDIAL ✦ TIKTOK TRENDS ✦</div>
   </div>
 </div>
 
-<!-- DOS CAMINOS (CON IMÁGENES DE FONDO) -->
+<!-- 10 SECTORES -->
+<section id="sectores">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag" data-es="// Sectores que despegamos" data-en="// Sectors we take off"></span>
+      <h2 data-es-html="10 rubros que <span class='metal-gold'>despegan</span> con nuestro talento"
+          data-en-html="10 industries that <span class='metal-gold'>take off</span> with our talent"></h2>
+      <p data-es="Modelos e influencers conectan su marca con audiencias reales en cada uno de estos sectores. Descubra cómo el talento femenino multiplica el alcance y prestigio de cualquier negocio."
+         data-en="Models and influencers connect your brand with real audiences in each of these sectors. Discover how female talent multiplies the reach and prestige of any business."></p>
+    </div>
+
+    <div class="sectors-grid">
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">01</span>
+        <h3 data-es="Moda & Boutiques" data-en="Fashion & Boutiques"></h3>
+        <p data-es="Modelos editoriales que multiplican el deseo de compra." data-en="Editorial models that multiply purchase desire."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">02</span>
+        <h3 data-es="Belleza & Cosmética" data-en="Beauty & Cosmetics"></h3>
+        <p data-es="Rostros magnéticos que generan confianza y ventas." data-en="Magnetic faces that build trust and sales."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">03</span>
+        <h3 data-es="Gastronomía & Restaurantes" data-en="Food & Restaurants"></h3>
+        <p data-es="Experiencias visuales que convierten visitas en reservas." data-en="Visual experiences that turn visits into reservations."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">04</span>
+        <h3 data-es="Fitness & Wellness" data-en="Fitness & Wellness"></h3>
+        <p data-es="Cuerpos en movimiento que motivan a probar su producto." data-en="Bodies in motion that motivate trying your product."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">05</span>
+        <h3 data-es="Tecnología & Gadgets" data-en="Technology & Gadgets"></h3>
+        <p data-es="Influencers tech mostrando el uso real del producto." data-en="Tech influencers showing real product use."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">06</span>
+        <h3 data-es="Inmobiliaria & Real Estate" data-en="Real Estate"></h3>
+        <p data-es="Recorridos con estilo y lifestyle aspiracional." data-en="Stylish tours and aspirational lifestyle."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">07</span>
+        <h3 data-es="Automotriz" data-en="Automotive"></h3>
+        <p data-es="Modelos en escenarios épicos elevan la percepción." data-en="Models in epic settings elevate perception."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">08</span>
+        <h3 data-es="Turismo & Hotelería" data-en="Tourism & Hospitality"></h3>
+        <p data-es="Contenido de viaje con emoción real y memorable." data-en="Travel content with real, memorable emotion."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">09</span>
+        <h3 data-es="Joyería & Accesorios" data-en="Jewelry & Accessories"></h3>
+        <p data-es="Brillo y elegancia en manos de modelos de estatus." data-en="Brilliance and elegance in high-status hands."></p>
+      </article>
+      <article class="sector reveal" style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=75&auto=format&fit=crop');">
+        <span class="sector-num">10</span>
+        <h3 data-es="Eventos & Entretenimiento" data-en="Events & Entertainment"></h3>
+        <p data-es="Modelos e influencers que vuelven viral cada lanzamiento." data-en="Models and influencers that make every launch go viral."></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GRÁFICO -->
+<section class="growth-section" id="crecimiento">
+  <div class="container">
+    <div class="growth-card reveal">
+      <div class="growth-head">
+        <h2 data-es-html="Cómo los negocios superan el <span class='metal-gold'>+1M de views</span>"
+            data-en-html="How businesses exceed <span class='metal-gold'>1M+ views</span>"></h2>
+        <p data-es="El marketing con modelos e influencers transforma la visibilidad de un negocio en pocas semanas."
+           data-en="Marketing with models and influencers transforms a business's visibility in just a few weeks."></p>
+      </div>
+      <div class="growth-chart">
+        <svg viewBox="0 0 560 240" role="img" aria-label="Gráfico de crecimiento / Growth chart">
+          <defs>
+            <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#a8861f"/>
+              <stop offset="50%" stop-color="#f0d67a"/>
+              <stop offset="100%" stop-color="#d4af37"/>
+            </linearGradient>
+            <linearGradient id="accentArea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f0d67a" stop-opacity="0.24"/>
+              <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <g stroke="rgba(212,175,55,0.1)" stroke-width="1">
+            <line x1="40" y1="30" x2="540" y2="30"/>
+            <line x1="40" y1="75" x2="540" y2="75"/>
+            <line x1="40" y1="120" x2="540" y2="120"/>
+            <line x1="40" y1="165" x2="540" y2="165"/>
+            <line x1="40" y1="195" x2="540" y2="195"/>
+          </g>
+          <g fill="#8f8779" font-size="9" font-family="Montserrat, sans-serif" font-weight="700">
+            <text x="36" y="33" text-anchor="end">1M</text>
+            <text x="36" y="78" text-anchor="end">750K</text>
+            <text x="36" y="123" text-anchor="end">500K</text>
+            <text x="36" y="168" text-anchor="end">250K</text>
+            <text x="36" y="198" text-anchor="end">0</text>
+          </g>
+
+          <path d="M40,195 C110,192 150,185 210,150 C270,115 310,85 380,60 C440,40 500,32 540,28 L540,195 L40,195 Z" fill="url(#accentArea)"/>
+
+          <path d="M40,195 C110,192 150,185 210,150 C270,115 310,85 380,60 C440,40 500,32 540,28"
+                fill="none" stroke="url(#accentLine)" stroke-width="2.5" stroke-linecap="round"/>
+
+          <g fill="#f0d67a">
+            <circle cx="40" cy="195" r="3"/>
+            <circle cx="210" cy="150" r="3"/>
+            <circle cx="380" cy="60" r="3"/>
+            <circle cx="540" cy="28" r="4"/>
+          </g>
+
+          <text x="540" y="20" text-anchor="end" fill="#f0d67a" font-size="10" font-family="Montserrat, sans-serif" font-weight="800">1M+ views</text>
+
+          <g fill="#8f8779" font-size="9" font-family="Montserrat, sans-serif" font-weight="700">
+            <text x="40" y="215" text-anchor="middle" data-es="Inicio" data-en="Start">Inicio</text>
+            <text x="210" y="215" text-anchor="middle" data-es="1 sem" data-en="1 wk">1 sem</text>
+            <text x="380" y="215" text-anchor="middle" data-es="2 sem" data-en="2 wk">2 sem</text>
+            <text x="540" y="215" text-anchor="middle" data-es="1 mes" data-en="1 mo">1 mes</text>
+          </g>
+        </svg>
+      </div>
+      <div class="growth-stats">
+        <div class="growth-stat"><b>+1M</b><small data-es="Views por campaña" data-en="Views per campaign"></small></div>
+        <div class="growth-stat"><b>+300%</b><small data-es="Aumento en ventas" data-en="Sales increase"></small></div>
+        <div class="growth-stat"><b>1</b><small data-es="Mes para escalar" data-en="Month to scale"></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOS CAMINOS -->
 <section id="caminos">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">// Elige tu puerta de entrada</span>
-      <h2>Potenciamos marcas y talentos con brillo mundial<span class="gold">.</span></h2>
-      <p>Ya sea que quieras que el mundo hable de tu producto o quieras monetizar tu belleza, baile y carisma.</p>
+      <span class="tag" data-es="// Elija su puerta de entrada" data-en="// Choose your entry door"></span>
+      <h2 data-es-html="Potenciamos marcas y talentos con <span class='metal-gold'>brillo mundial</span>."
+          data-en-html="We empower brands and talent with <span class='metal-gold'>worldwide shine</span>."></h2>
+      <p data-es="Ya sea que usted quiera que el mundo hable de su producto o quiera monetizar su belleza, influencia y carisma."
+         data-en="Whether you want the world to talk about your product or you want to monetize your beauty, influence and charisma."></p>
     </div>
     <div class="paths-grid">
-      
-      <!-- CAMINO 1: PARA MARCAS (Foto de fondo de moda y producción) -->
-      <article class="path card card-img featured reveal" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=75&auto=format&fit=crop');">
+      <article class="path card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700&q=65&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-star"/></svg></div>
-        <h3>Para Marcas & Empresas</h3>
-        <p>Aumenta el prestigio percibido de tu marca contratando a las mejores modelos, bailarinas e influencers con alcance internacional.</p>
+        <h3 data-es="Para Marcas & Empresas" data-en="For Brands & Companies"></h3>
+        <p data-es="Aumente el prestigio percibido de su marca contratando a las mejores modelos e influencers con alcance internacional."
+           data-en="Increase your brand's perceived prestige by hiring the best models and influencers with international reach."></p>
         <ul>
-          <li><svg class="ico"><use href="#i-check"/></svg>Campañas masivas en TikTok, Instagram y Reels</li>
-          <li><svg class="ico"><use href="#i-check"/></svg>Trends coreográficos con bailarinas profesionales</li>
-          <li><svg class="ico"><use href="#i-check"/></svg>Estrategias de distribución y pauta cinematográfica</li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Campañas masivas en TikTok, Instagram y Reels" data-en="Mass campaigns on TikTok, Instagram and Reels"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Marketing con creadoras de contenido y top influencers" data-en="Marketing with content creators and top influencers"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Estrategias de distribución y pauta cinematográfica" data-en="Distribution strategies and cinematic ads"></span></li>
         </ul>
-        <a href="#servicio" class="btn btn-gold">Solicitar propuesta exclusiva <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#contacto" class="btn btn-gold"><span data-es="Solicitar propuesta exclusiva" data-en="Request exclusive proposal"></span> <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
 
-      <!-- CAMINO 2: PARA MODELOS Y BAILARINAS (Foto de fondo de bailarina en escenario) -->
-      <article class="path card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=75&auto=format&fit=crop');">
-        <div class="icon-circle"><svg class="ico"><use href="#i-music"/></svg></div>
-        <h3>Para Modelos & Bailarinas</h3>
-        <p>Trabaja con marcas internacionales de moda, cosmética, música y lifestyle. Convierte tu talento en contratos continuos.</p>
+      <article class="path card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1547153760-18fc86324498?w=700&q=65&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
+        <h3 data-es="Para Modelos & Influencers" data-en="For Models & Influencers"></h3>
+        <p data-es="Trabaje con marcas internacionales de moda, cosmética, música y lifestyle. Convierta su talento y belleza en contratos continuos."
+           data-en="Work with international fashion, cosmetics, music and lifestyle brands. Turn your talent and beauty into continuous contracts."></p>
         <ul>
-          <li><svg class="ico"><use href="#i-check"/></svg>Casting abierto para modelos, bailarinas y creadoras</li>
-          <li><svg class="ico"><use href="#i-check"/></svg>Campañas pagadas, producciones y videoclips</li>
-          <li><svg class="ico"><use href="#i-check"/></svg>Representación seria con acuerdos directos</li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Casting abierto para modelos y creadoras de contenido" data-en="Open casting for models and content creators"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Campañas pagadas, producciones y videoclips" data-en="Paid campaigns, productions and music videos"></span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-es="Representación seria con acuerdos directos" data-en="Serious representation with direct agreements"></span></li>
         </ul>
-        <a href="#inscripcion" class="btn">Postularme al elenco <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#contacto" class="btn"><span data-es="Conocer más" data-en="Learn more"></span> <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- SERVICIOS CON IMÁGENES LIBRES DE DERECHOS DE FONDO -->
+<!-- SERVICIOS -->
 <section id="servicios">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">// Nuestro poder de fuego</span>
-      <h2>Servicios creados para viralizar y dar estatus<span class="gold">.</span></h2>
-      <p>Combinamos arte visual, talento femenino hipnótico y distribución algorítmica masiva.</p>
+      <span class="tag" data-es="// Nuestro poder de fuego" data-en="// Our firepower"></span>
+      <h2 data-es-html="Servicios creados para <span class='metal-gold'>viralizar</span> y dar estatus."
+          data-en-html="Services built to <span class='metal-gold'>go viral</span> and give status."></h2>
+      <p data-es="Combinamos arte visual, belleza femenina e influencia digital con distribución algorítmica masiva."
+         data-en="We combine visual art, female beauty and digital influence with massive algorithmic distribution."></p>
     </div>
     <div class="services-grid">
-      
-      <!-- SERVICIO 1: MODELAJE (Foto editorial alta costura) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=70&auto=format&fit=crop');">
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=60&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-camera"/></svg></div>
-        <h3>Modelos de Alta Gama</h3>
-        <p>Selección rigurosa de modelos publicitarias para catálogos, lookbooks de lujo y sesiones de fotos que posicionan tu marca en la cima.</p>
+        <h3 data-es="Modelos de Alta Gama" data-en="High-End Models"></h3>
+        <p data-es="Selección rigurosa de modelos publicitarias para catálogos, lookbooks de lujo y sesiones de fotos que posicionan su marca en la cima."
+           data-en="Rigorous selection of advertising models for catalogs, luxury lookbooks and photo sessions that position your brand at the top."></p>
       </article>
-
-      <!-- SERVICIO 2: BAILARINAS (Foto bailarina contemporánea en salto dinámico) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=700&q=70&auto=format&fit=crop');">
-        <div class="icon-circle"><svg class="ico"><use href="#i-music"/></svg></div>
-        <h3>Bailarinas & Trends Virales</h3>
-        <p>Coreografías hipnóticas, retos de baile en TikTok y reels dinámicos diseñados para capturar la retención de millones de personas.</p>
-      </article>
-
-      <!-- SERVICIO 3: INFLUENCERS (Foto creadora de contenido con estilo) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&q=70&auto=format&fit=crop');">
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=60&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
-        <h3>Marketing de Influencers</h3>
-        <p>Colocamos tu producto en manos de creadoras con audiencias masivas, leales y altamente comprometidas en todo el mundo hispano.</p>
+        <h3 data-es="Marketing de Influencers" data-en="Influencer Marketing"></h3>
+        <p data-es="Colocamos su producto en manos de creadoras con audiencias masivas, leales y altamente comprometidas en todo el mundo hispano."
+           data-en="We place your product in the hands of creators with massive, loyal and highly engaged audiences across the Spanish-speaking world."></p>
       </article>
-
-      <!-- SERVICIO 4: REELS CINEMATOGRÁFICOS (Foto cámara de cine / backstage) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&q=70&auto=format&fit=crop');">
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=60&auto=format&fit=crop');">
+        <div class="icon-circle"><svg class="ico"><use href="#i-music"/></svg></div>
+        <h3 data-es="Creadoras UGC & Bailarinas (Extra)" data-en="UGC Creators & Dancers (Extra)"></h3>
+        <p data-es="Como valor agregado, sumamos bailarinas profesionales y creadoras UGC para retos de baile en TikTok y contenido auténtico."
+           data-en="As a bonus, we add professional dancers and UGC creators for TikTok dance challenges and authentic content."></p>
+      </article>
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=60&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-film"/></svg></div>
-        <h3>Reels Cinematográficos</h3>
-        <p>Grabación con iluminación de estudio, óptica de cine y etalonaje de color profesional para proyectar opulencia y máxima calidad.</p>
+        <h3 data-es="Reels Cinematográficos" data-en="Cinematic Reels"></h3>
+        <p data-es="Grabación con iluminación de estudio, óptica de cine y etalonaje de color profesional para proyectar opulencia y máxima calidad."
+           data-en="Studio lighting, cinema optics and professional color grading to project opulence and maximum quality."></p>
       </article>
-
-      <!-- SERVICIO 5: DISTRIBUCIÓN MUNDIAL (Foto concierto / luces / escala) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&q=70&auto=format&fit=crop');">
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=60&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-globe"/></svg></div>
-        <h3>Distribución & Pauta Global</h3>
-        <p>Estrategia de amplificación publicitaria en Meta Ads y TikTok Ads para que el contenido sea visto por millones en tu nicho objetivo.</p>
+        <h3 data-es="Distribución & Pauta Global" data-en="Distribution & Global Ads"></h3>
+        <p data-es="Estrategia de amplificación publicitaria en Meta Ads y TikTok Ads para que el contenido sea visto por millones en su nicho objetivo."
+           data-en="Advertising amplification strategy on Meta Ads and TikTok Ads so content is seen by millions in your target niche."></p>
       </article>
-
-      <!-- SERVICIO 6: LANZAMIENTO EXCLUSIVO (Foto pasarela / evento exclusivo) -->
-      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=70&auto=format&fit=crop');">
+      <article class="service card card-img reveal" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=60&auto=format&fit=crop');">
         <div class="icon-circle"><svg class="ico"><use href="#i-sparkle"/></svg></div>
-        <h3>Lanzamientos & Activaciones</h3>
-        <p>Despliegue integral de modelos y bailarinas para inauguraciones, eventos VIP, desfiles y activaciones que rompen internet.</p>
+        <h3 data-es="Lanzamientos & Activaciones" data-en="Launches & Activations"></h3>
+        <p data-es="Despliegue integral de modelos e influencers para inauguraciones, eventos VIP, desfiles y activaciones que rompen internet."
+           data-en="Full deployment of models and influencers for openings, VIP events, catwalks and activations that break the internet."></p>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- LOOKBOOK Y ESTILOS -->
+<!-- LOOKBOOK -->
 <section id="lookbook">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">// Galería de talento</span>
-      <h2>El magnetismo de nuestro elenco<span class="gold">.</span></h2>
-      <p>Desliza para apreciar la versatilidad de estilos, ritmo y presencia visual que representamos.</p>
+      <span class="tag" data-es="// Galería de talento" data-en="// Talent gallery"></span>
+      <h2 data-es-html="El <span class='metal-gold'>magnetismo</span> de nuestras modelos e influencers."
+          data-en-html="The <span class='metal-gold'>magnetism</span> of our models and influencers."></h2>
+      <p data-es="Deslice para apreciar la versatilidad de estilos, ritmo y presencia visual que representamos."
+         data-en="Slide to appreciate the versatility of styles, rhythm and visual presence we represent."></p>
     </div>
-    <div class="lookbook reveal" aria-label="Universos y estilos">
-      
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=75&auto=format&fit=crop" alt="Editorial Fashion" loading="lazy">
-        <small>01</small><strong>Editorial & Moda</strong>
-      </article>
-
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&q=75&auto=format&fit=crop" alt="Bailarinas Urbanas" loading="lazy">
-        <small>02</small><strong>Bailarinas & Dance</strong>
-      </article>
-
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=75&auto=format&fit=crop" alt="Influencers de Élite" loading="lazy">
-        <small>03</small><strong>Top Influencers</strong>
-      </article>
-
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=75&auto=format&fit=crop" alt="Street style" loading="lazy">
-        <small>04</small><strong>Street Chic & Trends</strong>
-      </article>
-
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=75&auto=format&fit=crop" alt="Cine y Coreografía" loading="lazy">
-        <small>05</small><strong>Coreografías 4K</strong>
-      </article>
-
-      <article class="look">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=75&auto=format&fit=crop" alt="Lujo y Campañas" loading="lazy">
-        <small>06</small><strong>Lujo & Glamour</strong>
-      </article>
-
+    <div class="lookbook reveal" aria-label="Universos y estilos / Universes and styles">
+      <article class="look"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&q=70&auto=format&fit=crop" alt="Mujer entrenando" loading="lazy"><small>01</small><strong data-es="Fitness & Entrenamiento" data-en="Fitness & Training"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=70&auto=format&fit=crop" alt="Mujer comiendo" loading="lazy"><small>02</small><strong data-es="Gastronomía & Sabor" data-en="Gastronomy & Flavor"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=70&auto=format&fit=crop" alt="Mujer haciendo yoga" loading="lazy"><small>03</small><strong data-es="Yoga & Bienestar" data-en="Yoga & Wellness"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=500&q=70&auto=format&fit=crop" alt="Mujer en café" loading="lazy"><small>04</small><strong data-es="Lifestyle & Café" data-en="Lifestyle & Coffee"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&q=70&auto=format&fit=crop" alt="Mujer bailando" loading="lazy"><small>05</small><strong data-es="Baile & Coreografía" data-en="Dance & Choreography"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=70&auto=format&fit=crop" alt="Mujer en editorial" loading="lazy"><small>06</small><strong data-es="Moda & Editorial" data-en="Fashion & Editorial"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=70&auto=format&fit=crop" alt="Mujer en belleza" loading="lazy"><small>07</small><strong data-es="Belleza & Skincare" data-en="Beauty & Skincare"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=500&q=70&auto=format&fit=crop" alt="Mujer corriendo" loading="lazy"><small>08</small><strong data-es="Running & Deporte" data-en="Running & Sport"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=70&auto=format&fit=crop" alt="Mujer en playa" loading="lazy"><small>09</small><strong data-es="Playa & Viajes" data-en="Beach & Travel"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&q=70&auto=format&fit=crop" alt="Mujer cocinando" loading="lazy"><small>10</small><strong data-es="Cocina & Recetas" data-en="Cooking & Recipes"></strong></article>
+      <article class="look"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=70&auto=format&fit=crop" alt="Comunidad de mujeres" loading="lazy"><small>11</small><strong data-es="Comunidad & Lazos" data-en="Community & Bonds"></strong></article>
     </div>
-    <p class="look-note">Todas las imágenes son referencias fotográficas de alta calidad para producción publicitaria.</p>
+    <p class="look-note" data-es="Todas las imágenes son referencias fotográficas de alta calidad para producción publicitaria."
+       data-en="All images are high-quality photographic references for advertising production."></p>
   </div>
 </section>
 
@@ -819,34 +1417,40 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
 <section id="proceso">
   <div class="container">
     <div class="section-head reveal">
-      <span class="tag">// Método probado</span>
-      <h2>De la estrategia a la viralidad absoluta<span class="gold">.</span></h2>
-      <p>Un proceso estructurado para garantizar retorno de inversión y brillo de marca.</p>
+      <span class="tag" data-es="// Método probado" data-en="// Proven method"></span>
+      <h2 data-es-html="De la estrategia a la <span class='metal-gold'>viralidad absoluta</span>."
+          data-en-html="From strategy to <span class='metal-gold'>absolute virality</span>."></h2>
+      <p data-es="Un proceso estructurado para garantizar retorno de inversión y brillo de marca."
+         data-en="A structured process to guarantee return on investment and brand shine."></p>
     </div>
     <div class="process-grid">
       <article class="process card reveal">
-        <span class="process-number">01 / BRIEF</span>
+        <span class="process-number" data-es="01 / BRIEF" data-en="01 / BRIEF"></span>
         <div class="icon-circle"><svg class="ico"><use href="#i-message"/></svg></div>
-        <h3>Estrategia & Objetivos</h3>
-        <p>Definimos el target, el prestigio deseado y el concepto visual clave de tu campaña.</p>
+        <h3 data-es="Estrategia & Objetivos" data-en="Strategy & Goals"></h3>
+        <p data-es="Definimos el target, el prestigio deseado y el concepto visual clave de su campaña."
+           data-en="We define the target, desired prestige and the key visual concept of your campaign."></p>
       </article>
       <article class="process card reveal">
-        <span class="process-number">02 / CASTING</span>
+        <span class="process-number" data-es="02 / CASTING" data-en="02 / CASTING"></span>
         <div class="icon-circle"><svg class="ico"><use href="#i-users"/></svg></div>
-        <h3>Casting Selecto</h3>
-        <p>Asignamos a las modelos, bailarinas y creadoras que calzan con el ADN de tu producto.</p>
+        <h3 data-es="Casting Selecto" data-en="Select Casting"></h3>
+        <p data-es="Asignamos a las modelos e influencers que calzan con el ADN de su producto."
+           data-en="We assign the models and influencers that fit your product's DNA."></p>
       </article>
       <article class="process card reveal">
-        <span class="process-number">03 / PRODUCCIÓN</span>
+        <span class="process-number" data-es="03 / PRODUCCIÓN" data-en="03 / PRODUCTION"></span>
         <div class="icon-circle"><svg class="ico"><use href="#i-film"/></svg></div>
-        <h3>Creación & Baile</h3>
-        <p>Grabación con dirección de arte, coreografía y producción en alta definición.</p>
+        <h3 data-es="Creación & Estilo" data-en="Creation & Style"></h3>
+        <p data-es="Grabación con dirección de arte, modelo y producción en alta definición."
+           data-en="Filming with art direction, modeling and high-definition production."></p>
       </article>
       <article class="process card reveal">
-        <span class="process-number">04 / DISTRIBUCIÓN</span>
+        <span class="process-number" data-es="04 / DISTRIBUCIÓN" data-en="04 / DISTRIBUTION"></span>
         <div class="icon-circle"><svg class="ico"><use href="#i-chart"/></svg></div>
-        <h3>Impacto & Pauta</h3>
-        <p>Distribución en redes, monitoreo de reproducciones, alcance masivo y reporte final.</p>
+        <h3 data-es="Impacto & Pauta" data-en="Impact & Ads"></h3>
+        <p data-es="Distribución en redes, monitoreo de reproducciones, alcance masivo y reporte final."
+           data-en="Social distribution, view monitoring, massive reach and final report."></p>
       </article>
     </div>
   </div>
@@ -856,26 +1460,32 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
 <section id="faq">
   <div class="container faq-layout">
     <div class="faq-title reveal">
-      <span class="tag">// Claridad total</span>
-      <h2>Preguntas Frecuentes<span class="gold">.</span></h2>
-      <p>Todo lo que necesitas saber antes de lanzar tu próxima campaña.</p>
+      <span class="tag" data-es="// Claridad total" data-en="// Full clarity"></span>
+      <h2 data-es-html="Preguntas <span class='metal-gold'>Frecuentes</span>."
+          data-en-html="Frequent <span class='metal-gold'>Questions</span>."></h2>
+      <p data-es="Todo lo que usted necesita saber antes de lanzar su próxima campaña."
+         data-en="Everything you need to know before launching your next campaign."></p>
     </div>
     <div class="faq-list reveal">
       <details>
-        <summary>¿Por qué las modelos y bailarinas impulsan más las ventas?</summary>
-        <p>El dinamismo visual, la belleza y la coreografía retienen la atención en los primeros 3 segundos de un video en redes sociales, reduciendo el costo por adquisición y elevando el valor percibido del producto.</p>
+        <summary data-es="¿Por qué las modelos e influencers impulsan más las ventas?" data-en="Why do models and influencers boost sales more?"></summary>
+        <p data-es="El dinamismo visual, la belleza y la influencia retienen la atención en los primeros 3 segundos de un video en redes sociales, reduciendo el costo por adquisición y elevando el valor percibido del producto."
+           data-en="Visual dynamism, beauty and influence retain attention in the first 3 seconds of a social video, reducing acquisition cost and raising the product's perceived value."></p>
       </details>
       <details>
-        <summary>¿Puedo contratar sólo bailarinas para crear un trend musical o de producto?</summary>
-        <p>Totalmente. Desarrollamos la coreografía, adaptamos el audio en tendencia (TikTok/Reels/Shorts) y activamos a nuestro grupo de bailarinas para replicar el trend en cadena.</p>
+        <summary data-es="¿Puedo sumar bailarinas a mi campaña?" data-en="Can I add dancers to my campaign?"></summary>
+        <p data-es="Sí, es un extra excelente. Si bien nuestro fuerte son las modelos e influencers, podemos desarrollar coreografías y activar bailarinas profesionales para potenciar el contenido en TikTok y Reels."
+           data-en="Yes, it's an excellent extra. While our strength is models and influencers, we can develop choreographies and activate professional dancers to boost content on TikTok and Reels."></p>
       </details>
       <details>
-        <summary>¿Cómo postulan las modelos y bailarinas al elenco?</summary>
-        <p>Solo para mayores de 18 años. Completan el formulario en la pestaña "Inscribirme", comparten sus perfiles sociales y nuestro equipo de scouting coordina una entrevista por WhatsApp.</p>
+        <summary data-es="¿Cómo postulan las modelos e influencers al elenco?" data-en="How do models and influencers apply to the cast?"></summary>
+        <p data-es="Solo para mayores de 18 años. Completan el formulario en la pestaña 'Inscribirme', comparten sus perfiles sociales y nuestro equipo de scouting coordina una entrevista por WhatsApp."
+           data-en="Only for those over 18. They complete the form in the 'Apply' tab, share their social profiles and our scouting team coordinates an interview via WhatsApp."></p>
       </details>
       <details>
-        <summary>¿Trabajan con marcas y tiendas de cualquier tamaño?</summary>
-        <p>Sí. Diseñamos planes desde cápsulas de contenido para tiendas de moda emergentes hasta campañas de gran escala con pauta internacional para marcas consolidadas.</p>
+        <summary data-es="¿Trabajan con marcas y tiendas de cualquier tamaño?" data-en="Do you work with brands and stores of any size?"></summary>
+        <p data-es="Sí. Diseñamos planes desde cápsulas de contenido para tiendas de moda emergentes hasta campañas de gran escala con pauta internacional para marcas consolidadas."
+           data-en="Yes. We design plans from content capsules for emerging fashion stores to large-scale campaigns with international ads for established brands."></p>
       </details>
     </div>
   </div>
@@ -885,83 +1495,99 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
 <section id="contacto">
   <div class="container contact-layout">
     <div class="reveal">
-      <span class="tag">// Inicia hoy</span>
-      <h2 class="contact-title">Lleva tu marca al siguiente nivel con <span class="spotify-tag gold">+Viral</span>.</h2>
-      <p class="contact-description">
-        Selecciona tu perfil, cuéntanos tus metas y te responderemos inmediatamente a través de WhatsApp con una propuesta personalizada.
-      </p>
+      <span class="tag" data-es="// Inicie hoy" data-en="// Start today"></span>
+      <h2 class="contact-title" data-es-html="Lleve su marca al siguiente nivel con <span class='metal-gold'>+Viral</span>."
+          data-en-html="Take your brand to the next level with <span class='metal-gold'>+Viral</span>."></h2>
+      <p class="contact-description"
+         data-es="Seleccione su perfil, cuéntenos sus metas y le responderemos inmediatamente a través de WhatsApp con una propuesta personalizada."
+         data-en="Select your profile, tell us your goals and we'll reply immediately via WhatsApp with a personalized proposal."></p>
     </div>
 
     <div class="form-card card reveal">
-      <div class="tabs" role="tablist" aria-label="Tipo de consulta">
-        <button class="tab" role="tab" id="tabServicio" aria-controls="formServicio" aria-selected="true" type="button">Soy una Marca</button>
-        <button class="tab" role="tab" id="tabInscripcion" aria-controls="formInscripcion" aria-selected="false" type="button">Soy Modelo / Bailarina</button>
+      <div class="tabs" role="tablist" aria-label="Tipo de consulta / Inquiry type">
+        <button class="tab" role="tab" id="tabServicio" aria-controls="formServicio" aria-selected="true" type="button" data-es="Soy una Marca" data-en="I'm a Brand"></button>
+        <button class="tab" role="tab" id="tabInscripcion" aria-controls="formInscripcion" aria-selected="false" type="button" data-es="Soy Modelo / Influencer" data-en="I'm a Model / Influencer"></button>
       </div>
 
-      <!-- FORMULARIO 1: MARCAS -->
       <form class="contact-form" id="formServicio" role="tabpanel" aria-labelledby="tabServicio">
-        <div class="field"><input id="s-nombre" placeholder="Tu nombre" required></div>
-        <div class="field"><input id="s-contacto" placeholder="Tu WhatsApp o email" required></div>
-        <div class="field full"><input id="s-marca" placeholder="Nombre de tu marca o empresa" required></div>
-        <div class="field full sel">
+        <div class="field"><input id="s-nombre" data-es-ph="Su nombre" data-en-ph="Your name" required></div>
+        <div class="field"><input id="s-contacto" data-es-ph="Su WhatsApp o email" data-en-ph="Your WhatsApp or email" required></div>
+        <div class="field full"><input id="s-marca" data-es-ph="Nombre de su marca o empresa" data-en-ph="Your brand or company name" required></div>
+        <div class="field full">
           <select id="s-servicio" data-req="1">
-            <option value="">¿Qué servicio necesitas?</option>
-            <option>Campaña con Modelos de Élite</option>
-            <option>Bailarinas & Trends Coreográficos en TikTok</option>
-            <option>Marketing con Influencers & Creadoras</option>
-            <option>Producción de Reels Cinematográficos</option>
-            <option>Lanzamiento Exclusivo de Producto / Evento</option>
-            <option>Estrategia Completa de Distribución Global</option>
+            <option value="" data-es="¿Qué servicio necesita?" data-en="What service do you need?"></option>
+            <option data-es="Campaña con Modelos de Élite" data-en="High-End Model Campaign"></option>
+            <option data-es="Marketing con Influencers & Creadoras" data-en="Influencer & Creator Marketing"></option>
+            <option data-es="Producción de Reels Cinematográficos" data-en="Cinematic Reels Production"></option>
+            <option data-es="Bailarinas & Trends Coreográficos (Extra)" data-en="Dancers & Choreographic Trends (Extra)"></option>
+            <option data-es="Lanzamiento Exclusivo de Producto / Evento" data-en="Exclusive Product Launch / Event"></option>
+            <option data-es="Estrategia Completa de Distribución Global" data-en="Complete Global Distribution Strategy"></option>
           </select>
         </div>
-        <div class="field full sel">
+        <div class="field full">
           <select id="s-presupuesto">
-            <option value="">Presupuesto estimado (opcional)</option>
+            <option value="" data-es="Presupuesto estimado (opcional)" data-en="Estimated budget (optional)"></option>
             <option>USD $150 - $400</option>
             <option>USD $400 - $1,000</option>
             <option>USD $1,000 - $3,000</option>
-            <option>Más de USD $3,000</option>
+            <option data-es="Más de USD $3,000" data-en="Over USD $3,000"></option>
           </select>
         </div>
-        <div class="field full"><textarea id="s-mensaje" placeholder="Describe tu producto, metas de alcance y qué estética buscas proyectar..." required></textarea></div>
-        <div class="field full"><button class="btn btn-gold" type="submit">Enviar propuesta por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button></div>
-        <p class="form-note">Trato directo y confidencial. Se abrirá una conversación en tu WhatsApp.</p>
+        <div class="field full"><textarea id="s-mensaje" data-es-ph="Describa su producto, metas de alcance y qué estética busca proyectar..." data-en-ph="Describe your product, reach goals and what aesthetic you want to project..." required></textarea></div>
+        <div class="field full"><button class="btn btn-gold" type="submit"><span data-es="Enviar propuesta por WhatsApp" data-en="Send proposal via WhatsApp"></span> <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <p class="form-note" data-es="Trato directo y confidencial. Se abrirá una conversación en su WhatsApp."
+           data-en="Direct and confidential treatment. A conversation will open in your WhatsApp."></p>
       </form>
 
-      <!-- FORMULARIO 2: TALENTO (MODELOS / BAILARINAS) -->
       <form class="contact-form" id="formInscripcion" role="tabpanel" aria-labelledby="tabInscripcion" hidden>
-        <div class="field"><input id="i-nombre" placeholder="Nombre completo" required></div>
-        <div class="field"><input id="i-contacto" placeholder="Número de WhatsApp" required></div>
-        <div class="field"><input id="i-ciudad" placeholder="Ciudad y País" required></div>
-        <div class="field"><input id="i-redes" placeholder="Instagram y/o TikTok (@usuario)" required></div>
-        <div class="field full sel">
+        <div class="field"><input id="i-nombre" data-es-ph="Nombre completo" data-en-ph="Full name" required></div>
+        <div class="field"><input id="i-contacto" data-es-ph="Número de WhatsApp" data-en-ph="WhatsApp number" required></div>
+        <div class="field"><input id="i-ciudad" data-es-ph="Ciudad y País" data-en-ph="City and Country" required></div>
+        <div class="field"><input id="i-redes" data-es-ph="Instagram y/o TikTok (@usuario)" data-en-ph="Instagram and/or TikTok (@user)" required></div>
+        <div class="field full">
           <select id="i-categoria" data-req="1">
-            <option value="">¿Cuál es tu disciplina principal?</option>
-            <option>Modelo (Editorial / Pasarela / Comercial)</option>
-            <option>Bailarina Profesional (Urbano / Jazz / Moderno)</option>
-            <option>Influencer de Lifestyle / Moda</option>
-            <option>Actriz / Creadora de Contenido UGC</option>
+            <option value="" data-es="¿Cuál es su disciplina principal?" data-en="What's your main discipline?"></option>
+            <option data-es="Modelo (Editorial / Pasarela / Comercial)" data-en="Model (Editorial / Runway / Commercial)"></option>
+            <option data-es="Influencer de Lifestyle / Moda" data-en="Lifestyle / Fashion Influencer"></option>
+            <option data-es="Creadora de Contenido UGC" data-en="UGC Content Creator"></option>
+            <option data-es="Bailarina Profesional (Urbano / Jazz / Moderno)" data-en="Professional Dancer (Urban / Jazz / Modern)"></option>
           </select>
         </div>
-        <div class="field full sel">
+        <div class="field full">
           <select id="i-seguidores">
-            <option value="">Rango de audiencia (opcional)</option>
-            <option>Menos de 2.000 seguidores</option>
-            <option>2.000 a 15.000 seguidores</option>
-            <option>15.000 a 80.000 seguidores</option>
-            <option>Más de 80.000 seguidores</option>
+            <option value="" data-es="Rango de audiencia (opcional)" data-en="Audience range (optional)"></option>
+            <option data-es="Menos de 2.000 seguidores" data-en="Less than 2,000 followers"></option>
+            <option data-es="2.000 a 15.000 seguidores" data-en="2,000 to 15,000 followers"></option>
+            <option data-es="15.000 a 80.000 seguidores" data-en="15,000 to 80,000 followers"></option>
+            <option data-es="Más de 80.000 seguidores" data-en="Over 80,000 followers"></option>
           </select>
         </div>
-        <div class="field full"><textarea id="i-mensaje" placeholder="Cuéntanos tu experiencia previa, altura/medidas (si aplica a modelaje), estilos de baile y disponibilidad..."></textarea></div>
+        <div class="field full"><textarea id="i-mensaje" data-es-ph="Cuéntenos su experiencia previa, altura/medidas (si aplica), estilos de baile y disponibilidad..." data-en-ph="Tell us your prior experience, height/measurements (if applicable), dance styles and availability..."></textarea></div>
         <div class="field full">
-          <label class="check"><input type="checkbox" id="i-edad" required><span>Confirmo que soy mayor de 18 años.</span></label>
+          <label class="check"><input type="checkbox" id="i-edad" required><span data-es="Confirmo que soy mayor de 18 años." data-en="I confirm I am over 18 years old."></span></label>
         </div>
         <div class="field full">
-          <label class="check"><input type="checkbox" id="i-imagen" required><span>Autorizo la evaluación de mi perfil para propuestas con marcas.</span></label>
+          <label class="check"><input type="checkbox" id="i-imagen" required><span data-es="Autorizo la evaluación de mi perfil para propuestas con marcas." data-en="I authorize the evaluation of my profile for brand proposals."></span></label>
         </div>
-        <div class="field full"><button class="btn btn-gold" type="submit">Postularme por WhatsApp <svg class="ico"><use href="#i-arrow"/></svg></button></div>
-        <p class="form-note">Tus datos están protegidos. Respuesta directa con el equipo de casting.</p>
+        <div class="field full"><button class="btn btn-gold" type="submit"><span data-es="Postularme por WhatsApp" data-en="Apply via WhatsApp"></span> <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <p class="form-note" data-es="Sus datos están protegidos. Respuesta directa con el equipo de casting."
+           data-en="Your data is protected. Direct response from the casting team."></p>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- COMUNIDAD / FRASE MOTIVACIONAL -->
+<section class="community" id="comunidad">
+  <div class="container">
+    <div class="community-inner reveal">
+      <div class="heart-icon">
+        <svg class="ico"><use href="#i-heart"/></svg>
+      </div>
+      <h2 data-es-html="MÁS QUE CAMPAÑAS, <strong>CREAMOS LAZOS</strong>"
+          data-en-html="MORE THAN CAMPAIGNS, <strong>WE CREATE BONDS</strong>"></h2>
+      <p data-es-html="En Studio +Viral unimos el talento con las marcas para crear historias inolvidables. Juntos construimos el éxito y <strong>lazos que perduran para toda la vida</strong>."
+         data-en-html="At Studio +Viral we unite talent with brands to create unforgettable stories. Together we build success and <strong>bonds that last a lifetime</strong>."></p>
     </div>
   </div>
 </section>
@@ -976,19 +1602,16 @@ footer { padding: 30px 0 calc(30px + var(--safe-b)); border-top: 1px solid var(-
       <span class="l2">+Viral</span>
     </a>
     <div class="footer-links">
-      <a href="#servicios">Servicios</a>
-      <a href="#caminos">Marcas & Talento</a>
-      <a href="#lookbook">Lookbook</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#servicios" data-es="Servicios" data-en="Services"></a>
+      <a href="#caminos" data-es="Marcas & Talento" data-en="Brands & Talent"></a>
+      <a href="#lookbook" data-es="Lookbook" data-en="Lookbook"></a>
+      <a href="#comunidad" data-es="Comunidad" data-en="Community"></a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact"></a>
     </div>
-    <span class="footer-copy">© 2026 STUDIO +VIRAL · MARKETING DE INFLUENCERS & TALENTO · TODOS LOS DERECHOS RESERVADOS</span>
+    <span class="footer-copy" data-es="© 2026 STUDIO +VIRAL · MARKETING DE INFLUENCERS & TALENTO · TODOS LOS DERECHOS RESERVADOS"
+          data-en="© 2026 STUDIO +VIRAL · INFLUENCER MARKETING & TALENT · ALL RIGHTS RESERVED"></span>
   </div>
 </footer>
-
-<!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/5492920247733" class="wa" aria-label="Contactar por WhatsApp directo" target="_blank" rel="noopener">
-  <svg class="ico"><use href="#i-whatsapp"/></svg>
-</a>
 
 <script>
 document.documentElement.classList.add("js");
@@ -996,11 +1619,11 @@ document.documentElement.classList.add("js");
 const CONFIG = { whatsapp: "5492920247733" };
 const $ = id => document.getElementById(id);
 
-// 1. Alternador de tema Claro / Oscuro
+/* ========== 1. TEMA ========== */
 const themeBtn = $("themeBtn"), metaTheme = $("metaTheme");
 function applyTheme(t, save) {
   document.documentElement.setAttribute("data-theme", t);
-  if (metaTheme) metaTheme.setAttribute("content", t === "light" ? "#ffffff" : "#0a0908");
+  if (metaTheme) metaTheme.setAttribute("content", t === "light" ? "#ffffff" : "#050403");
   themeBtn.setAttribute("aria-pressed", t === "light");
   if (save) { try { localStorage.setItem("sv-theme", t); } catch (e) {} }
 }
@@ -1009,65 +1632,100 @@ themeBtn.addEventListener("click", () => {
   applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light", true);
 });
 
-// 2. Menú de navegación móvil
-const menuBtn = $("menuBtn"), navLinks = $("navLinks");
-function setMenu(open) {
-  navLinks.classList.toggle("open", open);
-  menuBtn.classList.toggle("open", open);
-  menuBtn.setAttribute("aria-expanded", open);
-  document.body.style.overflow = open && innerWidth <= 720 ? "hidden" : "";
-}
-menuBtn.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
-navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
-addEventListener("resize", () => { if (innerWidth > 720) setMenu(false); });
+/* ========== 2. IDIOMA ES/EN ========== */
+let currentLang = document.documentElement.getAttribute("lang") || "es";
 
-// 3. Efecto reveal al hacer scroll
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.setAttribute("lang", lang);
+
+  document.querySelectorAll("[data-es]").forEach(el => {
+    const v = el.dataset[lang];
+    if (v != null) el.textContent = v;
+  });
+  document.querySelectorAll("[data-es-html]").forEach(el => {
+    const v = el.dataset[lang + "Html"];
+    if (v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll("[data-es-ph]").forEach(el => {
+    const v = el.dataset[lang + "Ph"];
+    if (v != null) el.placeholder = v;
+  });
+
+  const label = $("langLabel");
+  if (label) label.textContent = lang === "es" ? "EN" : "ES";
+
+  rebuildAllDropdowns();
+  try { localStorage.setItem("sv-lang", lang); } catch (e) {}
+}
+
+const langBtn = $("langBtn");
+if (langBtn) {
+  langBtn.addEventListener("click", () => {
+    applyLang(currentLang === "es" ? "en" : "es");
+  });
+}
+
+/* ========== 3. REVEAL ========== */
 const items = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver(es => {
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
-  }, { threshold: .1, rootMargin: "0px 0px -25px 0px" });
+  }, { threshold: .1, rootMargin: "0px 0px -20px 0px" });
   items.forEach(el => io.observe(el));
 } else {
   items.forEach(el => el.classList.add("visible"));
 }
 
-// 4. Selectores estilizados personalizados
-document.querySelectorAll(".contact-form select").forEach(sel => {
+/* ========== 4. DROPDOWNS PERSONALIZADOS ========== */
+function buildDropdown(sel) {
   const host = sel.parentElement;
+  const oldDd = host.querySelector(".dd");
+  if (oldDd) oldDd.remove();
+
   const opts = [...sel.options];
-  const dd = document.createElement("div"); dd.className = "dd";
+  const dd = document.createElement("div");
+  dd.className = "dd";
 
   const btn = document.createElement("button");
   btn.type = "button"; btn.className = "dd-btn";
-  btn.setAttribute("aria-haspopup", "listbox"); btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-haspopup", "listbox");
+  btn.setAttribute("aria-expanded", "false");
   btn.innerHTML = '<span class="dd-label"></span><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>';
   const label = btn.firstChild;
 
-  const list = document.createElement("ul"); list.className = "dd-list"; list.setAttribute("role", "listbox");
+  const list = document.createElement("ul");
+  list.className = "dd-list"; list.setAttribute("role", "listbox");
   const listItems = [];
 
   opts.forEach((o, i) => {
     if (!o.value && i === 0) return;
     const li = document.createElement("li");
-    li.setAttribute("role", "option"); li.textContent = o.textContent; li.dataset.v = o.value || o.textContent;
+    li.setAttribute("role", "option");
+    li.textContent = o.textContent;
+    li.dataset.v = o.value || o.textContent;
     li.addEventListener("click", () => { choose(li); close(); btn.focus(); });
-    list.appendChild(li); listItems.push(li);
+    list.appendChild(li);
+    listItems.push(li);
   });
 
   dd.append(btn, list);
-  sel.style.display = "none"; sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true");
+  sel.style.display = "none";
+  sel.tabIndex = -1;
+  sel.setAttribute("aria-hidden", "true");
   host.appendChild(dd);
+
   let act = -1;
 
   function sync() {
     const cur = sel.value;
-    label.textContent = cur || opts[0].textContent;
+    label.textContent = cur || (opts[0] ? opts[0].textContent : "");
     btn.classList.toggle("filled", !!cur);
     listItems.forEach(li => li.classList.toggle("sel", li.dataset.v === cur));
   }
   function choose(li) {
     const o = opts.find(x => (x.value || x.textContent) === li.dataset.v);
+    if (!o) return;
     sel.value = o.value || o.textContent;
     dd.classList.remove("error");
     sel.dispatchEvent(new Event("change"));
@@ -1082,14 +1740,16 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
     document.querySelectorAll(".dd.open").forEach(d => d !== dd && d.classList.remove("open"));
     const r = btn.getBoundingClientRect();
     const below = innerHeight - r.bottom, above = r.top;
-    dd.classList.toggle("up", below < 270 && above > below);
-    dd.classList.add("open"); btn.setAttribute("aria-expanded", "true");
+    dd.classList.toggle("up", below < 240 && above > below);
+    dd.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
     const s = listItems.findIndex(li => li.classList.contains("sel"));
     setActive(s >= 0 ? s : 0);
-    if (s >= 0) list.scrollTop = Math.max(0, listItems[s].offsetTop - list.clientHeight / 2 + 23);
+    if (s >= 0) list.scrollTop = Math.max(0, listItems[s].offsetTop - list.clientHeight / 2 + 20);
   }
   function close() {
-    dd.classList.remove("open"); btn.setAttribute("aria-expanded", "false");
+    dd.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
     listItems.forEach(li => li.classList.remove("active"));
   }
 
@@ -1104,13 +1764,22 @@ document.querySelectorAll(".contact-form select").forEach(sel => {
     } else if (e.key === "Escape" || e.key === "Tab") { close(); }
   });
   document.addEventListener("pointerdown", e => { if (!dd.contains(e.target)) close(); });
-  listItems.forEach((li, k) => li.addEventListener("pointerenter", () => { if (matchMedia("(hover:hover)").matches) setActive(k); }));
+  listItems.forEach((li, k) => li.addEventListener("pointerenter", () => {
+    if (matchMedia("(hover:hover)").matches) setActive(k);
+  }));
   sel.addEventListener("change", sync);
   sync();
-});
+}
 
-// 5. Gestión de pestañas (Marcas / Talento)
-const tabs = { servicio: { tab: $("tabServicio"), form: $("formServicio") }, inscripcion: { tab: $("tabInscripcion"), form: $("formInscripcion") } };
+function rebuildAllDropdowns() {
+  document.querySelectorAll(".contact-form select").forEach(buildDropdown);
+}
+
+/* ========== 5. PESTAÑAS ========== */
+const tabs = {
+  servicio: { tab: $("tabServicio"), form: $("formServicio") },
+  inscripcion: { tab: $("tabInscripcion"), form: $("formInscripcion") }
+};
 function showTab(name) {
   Object.keys(tabs).forEach(k => {
     const on = k === name;
@@ -1119,25 +1788,14 @@ function showTab(name) {
   });
 }
 Object.keys(tabs).forEach(k => tabs[k].tab.addEventListener("click", () => showTab(k)));
-
-function goToForm(name) {
-  showTab(name);
-  const target = $("contacto");
-  if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-document.querySelectorAll('a[href="#servicio"], a[href="#inscripcion"]').forEach(a => {
-  a.addEventListener("click", e => {
-    e.preventDefault();
-    goToForm(a.getAttribute("href") === "#inscripcion" ? "inscripcion" : "servicio");
-  });
-});
 if (location.hash === "#inscripcion") showTab("inscripcion");
 
-// 6. Envío de datos a WhatsApp con formato profesional
+/* ========== 6. WHATSAPP ========== */
 function validateSelects(form) {
   for (const s of form.querySelectorAll("select[data-req]")) {
     if (!s.value) {
       const d = s.parentElement.querySelector(".dd");
+      if (!d) continue;
       d.classList.remove("error"); void d.offsetWidth; d.classList.add("error");
       d.scrollIntoView({ block: "center", behavior: "smooth" });
       d.querySelector(".dd-btn").click();
@@ -1151,45 +1809,49 @@ function sendWA(lines) {
 }
 const g = id => $(id).value.trim();
 
-// Submit Formulario Marcas
 $("formServicio").addEventListener("submit", e => {
   e.preventDefault();
   if (!validateSelects(e.target)) return;
+  const es = currentLang === "es";
   sendWA([
-    "⭐ *SOLICITUD DE CAMPAÑA | STUDIO +VIRAL* ⭐",
+    es ? "⭐ *SOLICITUD DE CAMPAÑA | STUDIO +VIRAL* ⭐" : "⭐ *CAMPAIGN REQUEST | STUDIO +VIRAL* ⭐",
     "",
-    "👤 *Nombre:* " + g("s-nombre"),
-    "📱 *Contacto:* " + g("s-contacto"),
-    "🏢 *Marca o Negocio:* " + g("s-marca"),
-    "🎯 *Servicio solicitado:* " + g("s-servicio"),
-    "💰 *Presupuesto estimado:* " + (g("s-presupuesto") || "A definir en propuesta"),
+    (es ? "👤 *Nombre:* " : "👤 *Name:* ") + g("s-nombre"),
+    (es ? "📱 *Contacto:* " : "📱 *Contact:* ") + g("s-contacto"),
+    (es ? "🏢 *Marca o Negocio:* " : "🏢 *Brand or Business:* ") + g("s-marca"),
+    (es ? "🎯 *Servicio solicitado:* " : "🎯 *Requested service:* ") + g("s-servicio"),
+    (es ? "💰 *Presupuesto estimado:* " : "💰 *Estimated budget:* ") + (g("s-presupuesto") || (es ? "A definir en propuesta" : "To be defined")),
     "",
-    "📝 *Detalles de la campaña:*",
+    es ? "📝 *Detalles de la campaña:*" : "📝 *Campaign details:*",
     g("s-mensaje")
   ]);
 });
 
-// Submit Formulario Modelos / Bailarinas
 $("formInscripcion").addEventListener("submit", e => {
   e.preventDefault();
   if (!validateSelects(e.target)) return;
   if (!$("i-edad").checked || !$("i-imagen").checked) return;
+  const es = currentLang === "es";
   sendWA([
-    "✨ *POSTULACIÓN DE TALENTO | STUDIO +VIRAL* ✨",
+    es ? "✨ *POSTULACIÓN DE TALENTO | STUDIO +VIRAL* ✨" : "✨ *TALENT APPLICATION | STUDIO +VIRAL* ✨",
     "",
-    "👤 *Nombre:* " + g("i-nombre"),
-    "📱 *WhatsApp:* " + g("i-contacto"),
-    "📍 *Ciudad / País:* " + g("i-ciudad"),
-    "🔗 *Redes:* " + g("i-redes"),
-    "🎭 *Disciplina:* " + g("i-categoria"),
-    "👥 *Seguidores:* " + (g("i-seguidores") || "En crecimiento"),
-    "✅ *Mayor de 18 años:* Sí",
-    "✅ *Autorización de imagen:* Sí",
+    (es ? "👤 *Nombre:* " : "👤 *Name:* ") + g("i-nombre"),
+    (es ? "📱 *WhatsApp:* " : "📱 *WhatsApp:* ") + g("i-contacto"),
+    (es ? "📍 *Ciudad / País:* " : "📍 *City / Country:* ") + g("i-ciudad"),
+    (es ? "🔗 *Redes:* " : "🔗 *Socials:* ") + g("i-redes"),
+    (es ? "🎭 *Disciplina:* " : "🎭 *Discipline:* ") + g("i-categoria"),
+    (es ? "👥 *Seguidores:* " : "👥 *Followers:* ") + (g("i-seguidores") || (es ? "En crecimiento" : "Growing")),
+    (es ? "✅ *Mayor de 18 años:* Sí" : "✅ *Over 18:* Yes"),
+    (es ? "✅ *Autorización de imagen:* Sí" : "✅ *Image authorization:* Yes"),
     "",
-    "💬 *Sobre mi trayectoria y estilo:*",
-    g("i-mensaje") || "Sin detalles adicionales"
+    es ? "💬 *Sobre mi trayectoria y estilo:*" : "💬 *About my background and style:*",
+    g("i-mensaje") || (es ? "Sin detalles adicionales" : "No additional details")
   ]);
 });
+
+/* ========== 7. INICIALIZACIÓN ========== */
+rebuildAllDropdowns();
+applyLang(currentLang);
 </script>
 </body>
-  </html>
+</html>
